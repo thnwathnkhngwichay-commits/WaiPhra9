@@ -12,6 +12,9 @@
 <body>
     <!-- App Container -->
     <div class="app-container">
+        <!-- Decorative glowing gradient circles in background -->
+        <div class="decor-glow bg-glow-1"></div>
+        <div class="decor-glow bg-glow-2"></div>
         <!-- 1. Header (Premium style from image mockup) -->
         <header class="custom-app-header">
             <div class="header-main-title">
@@ -159,6 +162,15 @@
 
                         <!-- Custom SVG River Route Map -->
                         <svg viewBox="0 0 450 350" class="svg-map-canvas">
+                            <defs>
+                                <linearGradient id="gold-metallic-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFF0D4" />
+                                    <stop offset="40%" stop-color="#E5C07B" />
+                                    <stop offset="70%" stop-color="#C49C5E" />
+                                    <stop offset="100%" stop-color="#8E6930" />
+                                </linearGradient>
+                            </defs>
+
                             <!-- Canal River Path (Thick natural duck green) -->
                             <path id="river-bg-path" d="M 25,60 C 15,100 15,180 50,180 C 85,180 90,140 120,130 C 170,110 180,180 220,180 C 265,180 270,120 295,120 C 330,120 330,260 365,260 C 400,260 410,180 435,180" fill="none" stroke="#54946F" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" />
                             
@@ -181,6 +193,7 @@
 
                             <!-- Marker 1: Bang Yai (Top Left) -->
                             <g id="marker-by" class="map-marker-pin active-pin" transform="translate(30, 80)">
+                                <circle class="pin-pulse-ring" r="22" />
                                 <circle r="18" class="pin-outer" />
                                 <circle r="14" class="pin-inner" />
                                 <path d="M-6,2 L6,2 L4,-2 L-4,-2 Z" fill="#C49C5E" />
@@ -189,6 +202,7 @@
 
                             <!-- Marker 2: Wat Chalo (First temple) -->
                             <g id="marker-temple-1" class="map-marker-pin active-pin" transform="translate(90, 160)">
+                                <circle class="pin-pulse-ring" r="22" />
                                 <circle r="18" class="pin-outer" />
                                 <circle r="14" class="pin-inner" />
                                 <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
@@ -197,6 +211,7 @@
                             
                             <!-- Marker 3: Wat Uthayan -->
                             <g id="marker-temple-8" class="map-marker-pin" transform="translate(200, 150)">
+                                <circle class="pin-pulse-ring" r="22" />
                                 <circle r="18" class="pin-outer" />
                                 <circle r="14" class="pin-inner" />
                                 <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
@@ -205,6 +220,7 @@
                             
                             <!-- Marker 4: Wat Takhian -->
                             <g id="marker-temple-10" class="map-marker-pin" transform="translate(300, 120)">
+                                <circle class="pin-pulse-ring" r="22" />
                                 <circle r="18" class="pin-outer" />
                                 <circle r="14" class="pin-inner" />
                                 <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
@@ -213,6 +229,7 @@
                             
                             <!-- Marker 5: Wat Rat Prakong Tham (End point) -->
                             <g id="marker-temple-14" class="map-marker-pin" transform="translate(400, 210)">
+                                <circle class="pin-pulse-ring" r="22" />
                                 <circle r="18" class="pin-outer" />
                                 <circle r="14" class="pin-inner" />
                                 <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
