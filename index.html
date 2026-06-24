@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaiPhra9.com (Easy Version) - ทริปไหว้พระริมน้ำอ้อมนนท์-บางใหญ่</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🪷</span>
+                <div class="logo-text">
+                    <h1>WaiPhra9.com</h1>
+                    <p class="tagline">Easy Version • ไหว้พระวิถีริมคลองอ้อมนนท์</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Weekday Alert Banner -->
+        <div id="weekday-alert" class="alert-banner">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-text">วันนี้เป็นวันธรรมดา ตลาดน้ำบางจุดอาจปิดให้บริการ แนะนำให้เยี่ยมชมสถาปัตยกรรมและท่าน้ำวัดแทน</span>
+        </div>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- 1. Smart Trip Selector -->
+            <section class="section card trip-selector">
+                <h2 class="section-title"><span class="icon">🧭</span> จัดทริปในสไตล์คุณ</h2>
+                
+                <div class="selector-group">
+                    <label>1. เลือกจำนวนวัดที่ต้องการไป:</label>
+                    <div class="temple-buttons">
+                        <button class="btn-toggle active" data-count="3">3 วัด (ด่วน/สะดวก)</button>
+                        <button class="btn-toggle" data-count="5">5 วัด (ครึ่งวัน)</button>
+                        <button class="btn-toggle" data-count="9">9 วัด (จัดเต็มสิริมงคล)</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <label>2. เส้นทางเดินเรือชุมชน (เรือชาวบ้าน):</label>
+                    <div class="route-info-card">
+                        <span class="route-badge">ปลอดภัย ไม่ลงแม่น้ำใหญ่</span>
+                        <h3>เส้นทางบางใหญ่ - คลองอ้อมนนท์</h3>
+                        <p>ล่องขนานตามคลองบางกอกน้อยดั้งเดิม หลีกเลี่ยงคลื่นลมแรงในแม่น้ำเจ้าพระยา ส่งเสริมรายได้สู่ชาวสวนและคนขับเรือท้องถิ่นโดยตรง</p>
+                    </div>
+                </div>
+
+                <!-- Meeting Point Info -->
+                <div class="meeting-point-box">
+                    <div class="meeting-badge">จุดรวมพลนัดหมาย</div>
+                    <h3>📍 ร้านเอ๋ปลาปล่อย (ตลาดน้ำวัดชลอ)</h3>
+                    <p>มีที่จอดรถสะดวกสบาย มีท่าน้ำสำหรับขึ้นเรือหางยาวชาวบ้าน และสามารถช็อปชิมของอร่อยริมน้ำที่ตลาดน้ำวัดชลอก่อนเริ่มเดินทางได้</p>
+                    <div class="meeting-actions">
+                        <a href="tel:0619655364" class="btn btn-secondary">📞 โทรหาร้านเอ๋ปลาปล่อย (061-965-5364)</a>
+                        <button class="btn btn-secondary line-btn" onclick="showPromptPay()">🟢 สแกน PromptPay</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Interactive Route Map Overlay -->
+            <section class="section card map-section">
+                <h2 class="section-title"><span class="icon">🗺️</span> แผนที่ล่องเรือนำทางอัจฉริยะ</h2>
+                <p class="subtitle">เส้นทางน้ำในคลองบางกอกน้อย & คลองอ้อมนนท์ (Custom Polyline Overlay)</p>
+                
+                <div class="map-simulation">
+                    <!-- Custom SVG Route Map to simulate Custom Polylines -->
+                    <svg viewBox="0 0 400 200" class="svg-map">
+                        <!-- Canal river path -->
+                        <path d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#d0e2d5" stroke-width="24" stroke-linecap="round" />
+                        <path d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#8d9b7b" stroke-width="4" stroke-dasharray="8,6" stroke-linecap="round" />
+                        
+                        <!-- Route Line dynamically highlighted -->
+                        <path id="map-route-line" d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#e5ba73" stroke-width="6" stroke-linecap="round" />
+
+                        <!-- Start Point Marker -->
+                        <g class="map-marker start-point" transform="translate(30, 170)">
+                            <circle r="10" fill="#e5ba73" />
+                            <circle r="4" fill="#faf6f0" />
+                            <text y="-15" text-anchor="middle" class="map-label">วัดชลอ (จุดรวมพล)</text>
+                        </g>
+
+                        <!-- Temple Markers -->
+                        <g id="marker-temple-2" class="map-marker" transform="translate(130, 140)">
+                            <circle r="7" fill="#8d9b7b" />
+                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดโพธิ์บางโอ</text>
+                        </g>
+                        
+                        <g id="marker-temple-3" class="map-marker" transform="translate(180, 130)">
+                            <circle r="7" fill="#8d9b7b" />
+                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดอุทยาน</text>
+                        </g>
+                        
+                        <g id="marker-temple-4" class="map-marker" transform="translate(230, 60)">
+                            <circle r="7" fill="#8d9b7b" />
+                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดตะเคียน</text>
+                        </g>
+                        
+                        <g id="marker-temple-5" class="map-marker" transform="translate(320, 40)">
+                            <circle r="7" fill="#8d9b7b" />
+                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดอัมพวัน</text>
+                        </g>
+
+                        <!-- End Point Marker -->
+                        <g id="marker-end" class="map-marker end-point" transform="translate(370, 30)">
+                            <circle r="9" fill="#c35a4a" />
+                            <circle r="3" fill="#faf6f0" />
+                            <text y="-15" text-anchor="middle" class="map-label">วัดราษฎร์ประคองธรรม</text>
+                        </g>
+                    </svg>
+                    <div class="map-info">
+                        <span>⛵ กำลังคำนวณเส้นทางทางน้ำเฉพาะคลอง...</span>
+                        <span>ปลอดภัย 100% หลีกเลี่ยงเส้นทางทางบก</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Dynamic Waterfront Temples List -->
+            <section class="section">
+                <div class="section-header-flex">
+                    <h2 class="section-title"><span class="icon">🕌</span> วัดริมน้ำในเส้นทางของคุณ</h2>
+                    <span id="temple-count-badge" class="count-badge">แสดงผล 3 วัด</span>
+                </div>
+
+                <div id="temple-list" class="temple-list-grid">
+                    <!-- Template cards will be injected by JavaScript -->
+                </div>
+            </section>
+
+            <!-- 4. Community Boat Pricing & Standardized Cost -->
+            <section class="section card pricing-section">
+                <h2 class="section-title"><span class="icon">💵</span> ตารางค่าบริการเรือมาตรฐานชุมชน</h2>
+                <p class="subtitle">ราคาโปร่งใส ไม่มีการโก่งราคาหน้างาน สนับสนุนกลุ่มเรือหางยาวชาวสวนโดยตรง</p>
+                
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>จำนวนวัดในทริป</th>
+                            <th>ประเภททริป</th>
+                            <th>ค่าเรือเหมาลำ (สูงสุด 8 คน)</th>
+                            <th>ระยะเวลาประมาณ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="price-row-3" class="highlight-row">
+                            <td>3 วัด</td>
+                            <td>ทริปด่วนสิริมงคล</td>
+                            <td class="price">500 บาท</td>
+                            <td>1.5 - 2 ชั่วโมง</td>
+                        </tr>
+                        <tr id="price-row-5">
+                            <td>5 วัด</td>
+                            <td>ทริปครึ่งวันอ้อมนนท์</td>
+                            <td class="price">800 บาท</td>
+                            <td>3 - 3.5 ชั่วโมง</td>
+                        </tr>
+                        <tr id="price-row-9">
+                            <td>9 วัด</td>
+                            <td>ทริปใหญ่เสริมบุญสะสมบุญ</td>
+                            <td class="price">1,200 บาท</td>
+                            <td>5 - 6 ชั่วโมง</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pricing-note">
+                    <p>💡 <strong>หมายเหตุ:</strong> ค่าเรือรวมประกันอุบัติเหตุทางน้ำและเสื้อชูชีพสำหรับผู้โดยสารทุกท่านแล้ว</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© 2026 WaiPhra9.com. ส่งเสริมการท่องเที่ยวชุมชนริมน้ำนนทบุรีอย่างยั่งยืน</p>
+        </footer>
+    </div>
+
+    <!-- Eco-friendly Fish Release Modal -->
+    <div id="fish-modal" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2>🐠 คู่มือปล่อยปลาเชิงอนุรักษ์ (Eco-Friendly Merit Guide)</h2>
+                <p>ได้บุญเต็มร้อย ธรรมชาติไม่ถูกทำลาย ณ คลองอ้อมนนท์</p>
+            </div>
+            <div class="modal-body">
+                <div class="fish-column safe-fish">
+                    <h3>✅ ปลาท้องถิ่นที่ปล่อยได้ (เหมาะกับสภาพคลอง)</h3>
+                    <ul>
+                        <li>
+                            <strong>ปลาช่อน / ปลาหมอ:</strong> ปล่อยบริเวณชายตลิ่งที่มีผักตบชวาหรือพืชน้ำหนาแน่น น้ำไหลไม่แรง
+                        </li>
+                        <li>
+                            <strong>ปลาตะเพียน:</strong> ปล่อยลงกลางคลองที่มีน้ำไหลผ่านและอากาศถ่ายเทได้ดี
+                        </li>
+                        <li>
+                            <strong>ปลาไหล:</strong> ปล่อยเฉพาะตลิ่งที่เป็นดินเลน น้ำตื้นไหลเอื่อยๆ
+                        </li>
+                    </ul>
+                </div>
+                <div class="fish-column alert-fish">
+                    <h3>❌ สัตว์น้ำอันตราย ห้ามปล่อยเด็ดขาด (Alien Species)</h3>
+                    <ul>
+                        <li>
+                            <strong>ปลาดุกอัฟริกัน / ปลาดุกบิ๊กอุย:</strong> กินจุ เติบโตเร็ว และจะไล่กินลูกปลาไทยจนสูญพันธุ์
+                        </li>
+                        <li>
+                            <strong>ปลากดเกราะ (Sucker):</strong> กินไข่ปลาและทำลายตลิ่งพังทลาย
+                        </li>
+                        <li>
+                            <strong>เต่าแก้มแดง (Japanese Turtle):</strong> แพร่พันธุ์เร็ว ทำลายระบบนิเวศท้องถิ่น
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer-box">
+                    <p>💚 <strong>ร้านเอ๋ปลาปล่อย (วัดชลอ) โทร. 061-965-5364</strong> มีบริการสัตว์น้ำทำบุญหลากหลายชนิด เช่น <strong>ปลาหมอ, ปลาไหล, ปลาดุก, ปลาสายน้ำผึ้ง, ปลานางฟ้า, ปลาแรด และอื่นๆ อีกมากมาย</strong> โดยจำหน่ายในราคายุติธรรม และรองรับการชำระเงินผ่าน <strong>PromptPay: 061-965-5364</strong> สะดวกสบายและได้บุญเต็มร้อยแน่นอนครับ!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

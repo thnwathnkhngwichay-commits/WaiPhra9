@@ -1,0 +1,9 @@
+{
+  "name": "waiphra9-easy",
+  "version": "1.0.0",
+  "description": "Easy version of WaiPhra9.com",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000"
+  }
+}

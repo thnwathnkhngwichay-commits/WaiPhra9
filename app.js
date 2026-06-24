@@ -1,0 +1,329 @@
+// database of 14 temples along the canal route (ordered from Chalo upstream to Bang Yai)
+const templesData = [
+    {
+        id: 1,
+        name: "1. วัดชลอ (จุดรวมพล)",
+        desc: "ชมอุโบสถสุพรรณหงส์อลังการริมน้ำ แวะช็อปชิมตลาดน้ำริมคลอง และแวะซื้อปลาปล่อยเชิงอนุรักษ์ที่ร้านเอ๋ปลาปล่อย",
+        badge: "เปิดวันเสาร์-อาทิตย์",
+        isWeekendOnly: true,
+        highlight: "โบโบสถ์เรือสุพรรณหงส์",
+        fishRelease: true,
+        coords: { x: 30, y: 170 }
+    },
+    {
+        id: 2,
+        name: "2. วัดเกดประยงค์เล็กตั้งตรงจิตร",
+        desc: "สัมผัสความร่มรื่นริมปากคลองบางกอกน้อย เรียนรู้วิถีชีวิตสองฝั่งคลองที่เงียบสงบแบบวิถีดั้งเดิม",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "วิถีริมคลอง",
+        fishRelease: false,
+        coords: { x: 80, y: 155 }
+    },
+    {
+        id: 3,
+        name: "3. วัดโพธิ์บางโอ",
+        desc: "นมัสการหลวงพ่อศิลา ชมพระอุโบสถเก่าแก่และจิตรกรรมฝาผนังช่างสิบหมู่สมัยรัชกาลที่ 3 ที่สวยงามจับตา",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "จิตรกรรมฝาผนังยุค ร.3",
+        fishRelease: false,
+        coords: { x: 130, y: 140 }
+    },
+    {
+        id: 4,
+        name: "4. วัดบางอ้อยช้าง",
+        desc: "สักการะรอยพระพุทธบาทจำลองศิลาแลงอายุกว่าร้อยปี และชมโบราณวัตถุล้ำค่าในพิพิธภัณฑ์ศิลปวัฒนธรรมพื้นบ้าน",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "รอยพระพุทธบาทจำลอง",
+        fishRelease: false,
+        coords: { x: 150, y: 145 }
+    },
+    {
+        id: 5,
+        name: "5. วัดไทยเจริญ",
+        desc: "ไหว้พระประธานศักดิ์สิทธิ์อุโบสถเก่าริมน้ำอ้อมนนท์ ชื่นชมลายปูนปั้นประดับโบราณสถานดั้งเดิม",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "พระอุโบสถโบราณ",
+        fishRelease: false,
+        coords: { x: 165, y: 138 }
+    },
+    {
+        id: 6,
+        name: "6. วัดแก้วฟ้า",
+        desc: "สักการะอุโบสถหลังเก่าและกำแพงหน้าบันอายุกว่า 400 ปี สมัยอยุธยาตอนกลาง บรรยากาศอนุรักษ์ดั้งเดิม",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "อุโบสถอยุธยา 400 ปี",
+        fishRelease: false,
+        coords: { x: 172, y: 132 }
+    },
+    {
+        id: 7,
+        name: "7. วัดพิกุลทอง",
+        desc: "ไหว้หลวงพ่อโสธรจำลองริมน้ำ สูดอากาศบริสุทธิ์ริมคลองอ้อมนนท์ในโซนธรรมชาติร่มรื่น",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "หลวงพ่อโสธรจำลอง",
+        fishRelease: false,
+        coords: { x: 175, y: 120 }
+    },
+    {
+        id: 8,
+        name: "8. วัดอุทยาน",
+        desc: "ขอพร 'หลวงพ่อขาว' ศิลปะอู่ทอง ขอพรการค้าขายและธุรกิจ แวะตลาดชุมชนซื้อของกินพื้นบ้านรสอร่อย",
+        badge: "เปิดวันเสาร์-อาทิตย์",
+        isWeekendOnly: true,
+        highlight: "หลวงพ่อขาว (การค้าขาย)",
+        fishRelease: true,
+        coords: { x: 180, y: 130 }
+    },
+    {
+        id: 9,
+        name: "9. วัดโบสถ์บน",
+        desc: "ปักหมุดจุดสัจธรรมสำคัญทางพุทธศาสนา สถานที่ซึ่งหลวงปู่สดวัดปากน้ำบรรลุธรรมวิชชาธรรมกาย ณ ชุมชนบางคูเวียง",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "สถานที่หลวงปู่สดบรรลุธรรม",
+        fishRelease: false,
+        coords: { x: 230, y: 60 }
+    },
+    {
+        id: 10,
+        name: "10. วัดตะเคียน",
+        desc: "ลอดใต้โบสถ์ล้างอาถรรพ์ ปัดเป่าสิ่งไม่ดี นมัสการหลวงปู่แย้ม และช็อปขนมอร่อยในตลาดน้ำวัดตะเคียนริมตลิ่ง",
+        badge: "เปิดทุกวัน (ตลาดเปิด ส.-อา.)",
+        isWeekendOnly: false,
+        highlight: "ลอดใต้โบสถ์สะเดาะเคราะห์",
+        fishRelease: true,
+        coords: { x: 260, y: 55 }
+    },
+    {
+        id: 11,
+        name: "11. วัดพิกุลเงิน",
+        desc: "ขอพรหลวงพ่อพุทธโสธรจำลององค์ใหญ่ที่สุดในย่านอ้อมนนท์ เสริมดวงชะตา และชมทิวทัศน์โค้งน้ำธรรมชาติ",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "หลวงพ่อโสธรองค์ใหญ่",
+        fishRelease: false,
+        coords: { x: 290, y: 48 }
+    },
+    {
+        id: 12,
+        name: "12. วัดอัมพวัน",
+        desc: "ชื่นชมโบราณสถานที่สวยงามอย่างหอไตรกลางน้ำไม้มะเกลือ ศิลปะช่างหลวงอยุธยาที่ประณีตและสมบูรณ์ที่สุด",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "หอไตรไม้โบราณกลางน้ำ",
+        fishRelease: false,
+        coords: { x: 320, y: 40 }
+    },
+    {
+        id: 13,
+        name: "13. วัดปรางค์หลวง",
+        desc: "นมัสการหลวงพ่ออู่ทอง และกราบเจดีย์พระปรางค์โบราณศิลาแลงอายุกว่า 600 ปี ซึ่งเป็นโบราณสถานที่เก่าแก่ที่สุดในนนทบุรี",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "พระปรางค์เก่าแก่ที่สุด 600 ปี",
+        fishRelease: false,
+        coords: { x: 345, y: 35 }
+    },
+    {
+        id: 14,
+        name: "14. วัดราษฎร์ประคองธรรม (ปลายทาง)",
+        desc: "กราบหลวงพ่อโตซำปอกงจำลอง นมัสการพระพุทธไสยาสน์นอนที่ใหญ่ที่สุดในจังหวัด และชื่นชมสถาปัตยกรรมพระธาตุพนมจำลอง",
+        badge: "เปิดทุกวัน",
+        isWeekendOnly: false,
+        highlight: "พระนอนองค์ใหญ่ที่สุดในนนท์",
+        fishRelease: true,
+        coords: { x: 370, y: 30 }
+    }
+];
+
+// App State
+let currentCount = 3;
+const isWeekend = new Date().getDay() === 0 || new Date().getDay() === 6; // Check if Saturday or Sunday
+
+// Elements
+const templeListContainer = document.getElementById("temple-list");
+const countBadge = document.getElementById("temple-count-badge");
+const weekdayAlert = document.getElementById("weekday-alert");
+const toggleButtons = document.querySelectorAll(".btn-toggle");
+const fishModal = document.getElementById("fish-modal");
+const closeModalBtn = document.querySelector(".close-btn");
+const mapRouteLine = document.getElementById("map-route-line");
+
+// Show/Hide weekday alert banner
+if (isWeekend) {
+    weekdayAlert.style.display = "none";
+}
+
+// Map path stroke arrays for different temple counts (illustrative path tracing)
+const pathDashArrays = {
+    3: "120, 400", // stops early at Wat Uthayan/Wat Bot Bon area
+    5: "250, 400", // stops around Wat Amphawan
+    9: "400, 400"  // goes all the way to Wat Rat Prakong Tham
+};
+
+// Filter and select specific temples for the 3/5/9 routes
+function getRouteTemples(count) {
+    if (count === 3) {
+        // Quick Trip: 1. Wat Chalo -> 8. Wat Uthayan -> 14. Wat Rat Prakong Tham (Selected targets for speed)
+        return [templesData[0], templesData[7], templesData[13]];
+    } else if (count === 5) {
+        // Half Day: 1. Wat Chalo -> 3. Wat Pho Bang O -> 8. Wat Uthayan -> 10. Wat Takhian -> 14. Wat Rat Prakong Tham
+        return [templesData[0], templesData[2], templesData[7], templesData[9], templesData[13]];
+    } else {
+        // Full Day / 9 Temples (Subset of 14 for optimal route)
+        return [
+            templesData[0], // Wat Chalo
+            templesData[2], // Wat Pho Bang O
+            templesData[3], // Wat Bang Oi Chang
+            templesData[5], // Wat Kaew Fah
+            templesData[7], // Wat Uthayan
+            templesData[8], // Wat Bot Bon
+            templesData[9], // Wat Takhian
+            inputs = templesData[11], // Wat Amphawan
+            templesData[13]  // Wat Rat Prakong Tham
+        ].filter(Boolean);
+    }
+}
+
+// Render Temples
+function renderTemples() {
+    const selectedTemples = getRouteTemples(currentCount);
+    
+    // Update badge text
+    countBadge.textContent = `แสดงผล ${selectedTemples.length} วัด`;
+    
+    // Update SVG route path animation
+    if (pathDashArrays[currentCount]) {
+        mapRouteLine.style.strokeDasharray = pathDashArrays[currentCount];
+    } else {
+        mapRouteLine.style.strokeDasharray = "400, 400";
+    }
+
+    // Update markers on SVG Map (show/hide based on selection)
+    updateMapMarkers(selectedTemples);
+
+    // Render cards
+    templeListContainer.innerHTML = "";
+    
+    selectedTemples.forEach((temple, index) => {
+        const card = document.createElement("div");
+        card.className = "temple-card";
+        
+        const badgeClass = temple.isWeekendOnly ? "weekend-only" : "daily";
+        
+        card.innerHTML = `
+            <div class="temple-card-header">
+                <h3 class="temple-title">${temple.name}</h3>
+                <span class="status-badge ${badgeClass}">${temple.badge}</span>
+            </div>
+            <p class="temple-desc">${temple.desc}</p>
+            <div class="temple-actions">
+                <button class="btn-sm btn-primary-sm" onclick="showWorshipGuide('${temple.name}', '${temple.highlight}')">🧭 ไฮไลท์ขอพร</button>
+                ${temple.fishRelease ? `<button class="btn-sm btn-accent-sm" onclick="openFishGuide()">🐠 คู่มือปล่อยปลา</button>` : ''}
+            </div>
+        `;
+        templeListContainer.appendChild(card);
+    });
+
+    // Update Pricing highlight row
+    updatePricingHighlight(currentCount);
+}
+
+// Update Map markers opacity based on active temples
+function updateMapMarkers(activeTemples) {
+    const allMarkers = {
+        2: document.getElementById("marker-temple-2"),
+        3: document.getElementById("marker-temple-3"),
+        4: document.getElementById("marker-temple-4"),
+        5: document.getElementById("marker-temple-5"),
+        "end": document.getElementById("marker-end")
+    };
+
+    // Reset all markers
+    Object.values(allMarkers).forEach(marker => {
+        if (marker) {
+            marker.style.opacity = "0.2";
+            marker.querySelector("circle").setAttribute("fill", "#8d9b7b");
+        }
+    });
+
+    // Highlight active markers
+    activeTemples.forEach(temple => {
+        if (temple.id === 3 && allMarkers[2]) {
+            allMarkers[2].style.opacity = "1";
+            allMarkers[2].querySelector("circle").setAttribute("fill", "#e5ba73");
+        }
+        if (temple.id === 8 && allMarkers[3]) {
+            allMarkers[3].style.opacity = "1";
+            allMarkers[3].querySelector("circle").setAttribute("fill", "#e5ba73");
+        }
+        if (temple.id === 10 && allMarkers[4]) {
+            allMarkers[4].style.opacity = "1";
+            allMarkers[4].querySelector("circle").setAttribute("fill", "#e5ba73");
+        }
+        if (temple.id === 12 && allMarkers[5]) {
+            allMarkers[5].style.opacity = "1";
+            allMarkers[5].querySelector("circle").setAttribute("fill", "#e5ba73");
+        }
+        if (temple.id === 14 && allMarkers["end"]) {
+            allMarkers["end"].style.opacity = "1";
+            allMarkers["end"].querySelector("circle").setAttribute("fill", "#c35a4a");
+        }
+    });
+}
+
+// Highlight pricing table row based on selected temple count
+function updatePricingHighlight(count) {
+    document.querySelectorAll(".pricing-table tbody tr").forEach(row => {
+        row.classList.remove("highlight-row");
+    });
+    const activeRow = document.getElementById(`price-row-${count}`);
+    if (activeRow) {
+        activeRow.classList.add("highlight-row");
+    }
+}
+
+// Show specific worship guide (Alert popup)
+window.showWorshipGuide = function(name, highlight) {
+    alert(`🪷 เคล็ดลับขอพร ณ ${name}:\n\nจุดเด่น/ไฮไลท์: ${highlight}\n\nคำอธิษฐานแนะนำ: "ขออานิสงส์การบำเพ็ญบุญและท่องเที่ยวหนุนนำวิถีชีวิตชุมชน ขอให้การค้าขายเจริญรุ่งเรือง สุขภาพร่างกายแข็งแรง ปราศจากโรคภัยไข้เจ็บตลอดการเดินทาง"`);
+};
+
+// Show PromptPay details
+window.showPromptPay = function() {
+    alert("🟢 ช่องทางการชำระเงินค่ายาสัตว์น้ำทำบุญ (ร้านเอ๋ปลาปล่อย)\n\nPromptPay: 061-965-5364\nชื่อบัญชี: ร้านเอ๋ปลาปล่อย\n\nขอขอบคุณที่สนับสนุนปลาปล่อยของชุมชนและได้ร่วมทำบุญเชิงอนุรักษ์ครับ 🪷");
+};
+
+// Modal functions
+window.openFishGuide = function() {
+    fishModal.style.display = "flex";
+};
+
+closeModalBtn.onclick = function() {
+    fishModal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target === fishModal) {
+        fishModal.style.display = "none";
+    }
+};
+
+// Handle temple count buttons click
+toggleButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        toggleButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        
+        currentCount = parseInt(button.getAttribute("data-count"), 10);
+        renderTemples();
+    });
+});
+
+// Initialize on page load
+renderTemples();

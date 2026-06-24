@@ -1,0 +1,647 @@
+/* Root CSS Variables for Brand Colors & Theme */
+:root {
+    --bg-color: #FAF6F0; /* Warm Almond Cream */
+    --card-bg: rgba(255, 255, 255, 0.85); /* Semi-transparent White */
+    --text-primary: #2E3A2F; /* Deep Forest/Charcoal */
+    --text-secondary: #5A6B5C; /* Slate Sage */
+    --primary-color: #8D9B7B; /* Olive Sage Green */
+    --primary-light: #D0E2D5; /* Pale Sage */
+    --accent-gold: #E5BA73; /* Warm Gold */
+    --accent-red: #C35A4A; /* Terracotta Red */
+    --border-color: rgba(141, 155, 123, 0.2);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(46, 58, 47, 0.08), 0 4px 6px -2px rgba(46, 58, 47, 0.03);
+    --shadow-lg: 0 20px 25px -5px rgba(46, 58, 47, 0.12), 0 10px 10px -5px rgba(46, 58, 47, 0.04);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+}
+
+/* Base resets & fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', 'Outfit', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* App Layout Container (Centered, max-width like mobile screen) */
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+/* Header styling */
+.app-header {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 32px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.logo-text h1 {
+    font-family: 'Outfit', 'Noto Sans Thai', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.logo-text p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Keyframe for floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Alert Banner styling */
+.alert-banner {
+    background-color: #FFF2D6;
+    border: 1px solid #FFE0A3;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: #8A641B;
+    box-shadow: var(--shadow-sm);
+    align-items: flex-start;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-icon {
+    font-size: 16px;
+}
+
+/* Standard Section & Card designs */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title .icon {
+    font-size: 20px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: -12px;
+    margin-bottom: 16px;
+}
+
+/* Selector Group styling */
+.selector-group {
+    margin-bottom: 20px;
+}
+
+.selector-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+/* Toggle Buttons for Temple Count */
+.temple-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.btn-toggle {
+    background-color: rgba(141, 155, 123, 0.1);
+    border: 1px solid var(--border-color);
+    padding: 10px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.25s ease;
+}
+
+.btn-toggle:hover {
+    background-color: rgba(141, 155, 123, 0.2);
+}
+
+.btn-toggle.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(141, 155, 123, 0.3);
+}
+
+/* Route Info Card */
+.route-info-card {
+    background-color: rgba(141, 155, 123, 0.05);
+    border: 1px solid rgba(141, 155, 123, 0.15);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+}
+
+.route-badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: #4A5B4C;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.route-info-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.route-info-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Meeting Point Details */
+.meeting-point-box {
+    border-top: 1px dashed var(--border-color);
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+.meeting-badge {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: #7A531C;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.meeting-point-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.meeting-point-box p {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.meeting-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(141, 155, 123, 0.1);
+}
+
+.line-btn {
+    border-color: #25D366;
+    color: #128C7E;
+}
+
+.line-btn:hover {
+    background-color: rgba(37, 211, 102, 0.1);
+}
+
+/* Map Simulation Section */
+.map-simulation {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: #EBF3ED;
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.svg-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Map Marker styles */
+.map-marker {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.map-marker:hover {
+    transform: scale(1.2);
+}
+
+.map-marker.start-point circle {
+    animation: pulse-gold 2s infinite;
+}
+
+.map-marker.end-point circle {
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-gold {
+    0%, 100% { fill: #e5ba73; }
+    50% { fill: #f3d49f; }
+}
+
+@keyframes pulse-red {
+    0%, 100% { fill: #c35a4a; }
+    50% { fill: #e08b7f; }
+}
+
+.map-label {
+    font-size: 9px;
+    font-weight: 700;
+    fill: var(--text-primary);
+    text-shadow: 0 1px 2px white, 0 -1px 2px white, 1px 0 2px white, -1px 0 2px white;
+}
+
+.font-small {
+    font-size: 7.5px;
+    font-weight: 600;
+    fill: var(--text-secondary);
+}
+
+.map-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(46, 58, 47, 0.85);
+    color: white;
+    padding: 6px 12px;
+    font-size: 10.5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Temple List Layout */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.count-badge {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.temple-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Temple Card Design */
+.temple-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.temple-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.temple-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.status-badge.weekend-only {
+    background-color: #FFF2D6;
+    color: #8A641B;
+    border: 1px solid #FFE0A3;
+}
+
+.status-badge.daily {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+}
+
+.temple-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.temple-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-sm {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary-sm:hover {
+    background-color: #788767;
+}
+
+.btn-accent-sm {
+    background-color: rgba(229, 186, 115, 0.2);
+    color: #7A531C;
+    border: 1px solid rgba(229, 186, 115, 0.4);
+}
+
+.btn-accent-sm:hover {
+    background-color: rgba(229, 186, 115, 0.3);
+}
+
+/* Pricing Table Design */
+.pricing-section {
+    overflow: hidden;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 12px;
+    text-align: left;
+}
+
+.pricing-table th {
+    background-color: rgba(141, 155, 123, 0.15);
+    color: var(--text-primary);
+    padding: 10px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.pricing-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-table tr.highlight-row {
+    background-color: rgba(229, 186, 115, 0.15);
+    font-weight: 600;
+}
+
+.pricing-table td.price {
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+.pricing-note {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* App Footer */
+.app-footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* Modal styling for Fish Release Guide */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 58, 47, 0.6);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    animation: fadeIn 0.25s ease-out;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 440px;
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--accent-red);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-header h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-header p {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fish-column h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.safe-fish h3 {
+    color: #155724;
+}
+
+.alert-fish h3 {
+    color: var(--accent-red);
+}
+
+.fish-column ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fish-column li {
+    font-size: 12px;
+    position: relative;
+    padding-left: 14px;
+    color: var(--text-secondary);
+}
+
+.fish-column li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.safe-fish li::before {
+    color: #28a745;
+}
+
+.alert-fish li::before {
+    color: var(--accent-red);
+}
+
+.modal-footer-box {
+    background-color: rgba(141, 155, 123, 0.1);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    font-size: 11px;
+    border-left: 3px solid var(--primary-color);
+}
