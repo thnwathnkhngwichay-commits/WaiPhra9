@@ -193,6 +193,53 @@ body {
 }
 
 /* 2. Interactive Route Map Section */
+/* Hero Video Section */
+.map-hero-section {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+}
+
+.map-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-hero-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px 16px;
+    background: linear-gradient(to top, rgba(29, 37, 30, 0.9) 0%, transparent 100%);
+    color: white;
+}
+
+.map-hero-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    color: var(--accent-gold);
+}
+
+.map-hero-subtitle {
+    font-size: 13.5px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
 .map-section-card {
     padding: 20px 16px;
 }
@@ -490,9 +537,9 @@ body {
 }
 
 .temple-list-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
 }
 
 @keyframes slideCardUp {
@@ -504,24 +551,33 @@ body {
     background: var(--card-bg);
     border: var(--card-border);
     border-radius: var(--radius-md);
-    padding: 18px;
+    padding: 14px;
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     gap: 8px;
     animation: slideCardUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+}
+
+.temple-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 38px rgba(196, 156, 94, 0.15);
 }
 
 .temple-card-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
 .temple-title {
     font-size: 15px;
     font-weight: 700;
     color: var(--text-primary);
+    width: 100%;
 }
 
 .status-badge {
@@ -550,8 +606,10 @@ body {
 
 .temple-actions {
     display: flex;
+    flex-direction: column;
     gap: 8px;
     margin-top: 6px;
+    width: 100%;
 }
 
 .btn-sm {
@@ -906,4 +964,58 @@ body {
 
 .mockup-image:hover {
     transform: scale(1.015);
+}
+
+.temple-card-image {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    border-radius: calc(var(--radius-sm) - 2px);
+    margin-bottom: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.temple-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.prayer-box {
+    background-color: rgba(196, 156, 94, 0.05);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-top: 6px;
+    border: 1px dashed rgba(196, 156, 94, 0.4);
+}
+
+.prayer-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--accent-gold);
+    text-align: center;
+}
+
+.prayer-text p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.prayer-text strong {
+    color: var(--text-primary);
+    font-size: 12.5px;
+}
+
+.prayer-ref {
+    font-size: 10px !important;
+    text-align: right !important;
+    font-style: italic;
+    color: rgba(78, 94, 80, 0.6) !important;
+    margin-top: 14px;
+    margin-bottom: 0 !important;
 }

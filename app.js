@@ -8,7 +8,8 @@ const templesData = [
         isWeekendOnly: true,
         highlight: "โบโบสถ์เรือสุพรรณหงส์",
         fishRelease: true,
-        coords: { x: 30, y: 170 }
+        coords: { x: 30, y: 170 },
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cha-lor.jpg/500px-Cha-lor.jpg"
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "วิถีริมคลอง",
         fishRelease: false,
-        coords: { x: 80, y: 155 }
+        coords: { x: 80, y: 155 },
+        image: "https://images.unsplash.com/photo-1598509524146-5c5f492a8335?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "จิตรกรรมฝาผนังยุค ร.3",
         fishRelease: false,
-        coords: { x: 130, y: 140 }
+        coords: { x: 130, y: 140 },
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%AD.jpg/500px-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%AD.jpg"
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "รอยพระพุทธบาทจำลอง",
         fishRelease: false,
-        coords: { x: 150, y: 145 }
+        coords: { x: 150, y: 145 },
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/%E0%B8%8B%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87.jpg/500px-%E0%B8%8B%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87.jpg"
     },
     {
         id: 5,
@@ -48,7 +52,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "พระอุโบสถโบราณ",
         fishRelease: false,
-        coords: { x: 165, y: 138 }
+        coords: { x: 165, y: 138 },
+        image: "https://images.unsplash.com/photo-1540417931326-407421fbc8eb?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 6,
@@ -58,7 +63,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "อุโบสถอยุธยา 400 ปี",
         fishRelease: false,
-        coords: { x: 172, y: 132 }
+        coords: { x: 172, y: 132 },
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kaew-Fa-%281%29.jpg/500px-Kaew-Fa-%281%29.jpg"
     },
     {
         id: 7,
@@ -68,7 +74,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "หลวงพ่อโสธรจำลอง",
         fishRelease: false,
-        coords: { x: 175, y: 120 }
+        coords: { x: 175, y: 120 },
+        image: "https://images.unsplash.com/photo-1528313437151-57ff0e4ccb50?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 8,
@@ -78,7 +85,8 @@ const templesData = [
         isWeekendOnly: true,
         highlight: "หลวงพ่อขาว (การค้าขาย)",
         fishRelease: true,
-        coords: { x: 180, y: 130 }
+        coords: { x: 180, y: 130 },
+        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 9,
@@ -88,7 +96,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "สถานที่หลวงปู่สดบรรลุธรรม",
         fishRelease: false,
-        coords: { x: 230, y: 60 }
+        coords: { x: 230, y: 60 },
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96%E0%B9%8C%E0%B8%9A%E0%B8%99.jpg/500px-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96%E0%B9%8C%E0%B8%9A%E0%B8%99.jpg"
     },
     {
         id: 10,
@@ -98,7 +107,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "ลอดใต้โบสถ์สะเดาะเคราะห์",
         fishRelease: true,
-        coords: { x: 260, y: 55 }
+        coords: { x: 260, y: 55 },
+        image: "https://images.unsplash.com/photo-1602693892398-35ed56a6d655?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 11,
@@ -108,7 +118,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "หลวงพ่อโสธรองค์ใหญ่",
         fishRelease: false,
-        coords: { x: 290, y: 48 }
+        coords: { x: 290, y: 48 },
+        image: "https://images.unsplash.com/photo-1579201509355-667cb721df75?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 12,
@@ -118,7 +129,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "หอไตรไม้โบราณกลางน้ำ",
         fishRelease: false,
-        coords: { x: 320, y: 40 }
+        coords: { x: 320, y: 40 },
+        image: "https://images.unsplash.com/photo-1606558458784-0751f3d368e7?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 13,
@@ -128,7 +140,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "พระปรางค์เก่าแก่ที่สุด 600 ปี",
         fishRelease: false,
-        coords: { x: 345, y: 35 }
+        coords: { x: 345, y: 35 },
+        image: "https://images.unsplash.com/photo-1533722238356-9a5d3f27de19?auto=format&fit=crop&w=500&q=80"
     },
     {
         id: 14,
@@ -138,7 +151,8 @@ const templesData = [
         isWeekendOnly: false,
         highlight: "พระนอนองค์ใหญ่ที่สุดในนนท์",
         fishRelease: true,
-        coords: { x: 370, y: 30 }
+        coords: { x: 370, y: 30 },
+        image: "https://images.unsplash.com/photo-1616782390885-30f1d5e56e40?auto=format&fit=crop&w=500&q=80"
     }
 ];
 
@@ -218,14 +232,17 @@ function renderTemples() {
         const badgeClass = temple.isWeekendOnly ? "weekend-only" : "daily";
         
         card.innerHTML = `
-            <div class="temple-card-header">
-                <h3 class="temple-title">${temple.name}</h3>
-                <span class="status-badge ${badgeClass}">${temple.badge}</span>
-            </div>
-            <p class="temple-desc">${temple.desc}</p>
-            <div class="temple-actions">
-                <button class="btn-sm btn-primary-sm" onclick="showWorshipGuide('${temple.name}', '${temple.highlight}')">🧭 ไฮไลท์ขอพร</button>
-                ${temple.fishRelease ? `<button class="btn-sm btn-accent-sm" onclick="openFishGuide()">🐠 คู่มือปล่อยปลา</button>` : ''}
+            <div class="temple-card-image" style="background-image: url('${temple.image}');"></div>
+            <div class="temple-card-content">
+                <div class="temple-card-header">
+                    <h3 class="temple-title">${temple.name}</h3>
+                    <span class="status-badge ${badgeClass}">${temple.badge}</span>
+                </div>
+                <p class="temple-desc">${temple.desc}</p>
+                <div class="temple-actions">
+                    <button class="btn-sm btn-primary-sm" onclick="showWorshipGuide('${temple.name}', '${temple.highlight}')">🧭 ไฮไลท์ขอพร</button>
+                    ${temple.fishRelease ? `<button class="btn-sm btn-accent-sm" onclick="openFishGuide()">🐠 คู่มือปล่อยปลา</button>` : ''}
+                </div>
             </div>
         `;
         templeListContainer.appendChild(card);
