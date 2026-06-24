@@ -9,7 +9,7 @@ const templesData = [
         highlight: "โบโบสถ์เรือสุพรรณหงส์",
         fishRelease: true,
         coords: { x: 30, y: 170 },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cha-lor.jpg/500px-Cha-lor.jpg"
+        image: "images/temple_river_gold.png"
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ const templesData = [
         highlight: "วิถีริมคลอง",
         fishRelease: false,
         coords: { x: 80, y: 155 },
-        image: "https://images.unsplash.com/photo-1598509524146-5c5f492a8335?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_wood_canal.png"
     },
     {
         id: 3,
@@ -31,7 +31,7 @@ const templesData = [
         highlight: "จิตรกรรมฝาผนังยุค ร.3",
         fishRelease: false,
         coords: { x: 130, y: 140 },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%AD.jpg/500px-%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%AD.jpg"
+        image: "images/temple_grand_hall.png"
     },
     {
         id: 4,
@@ -42,7 +42,7 @@ const templesData = [
         highlight: "รอยพระพุทธบาทจำลอง",
         fishRelease: false,
         coords: { x: 150, y: 145 },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/%E0%B8%8B%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87.jpg/500px-%E0%B8%8B%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87.jpg"
+        image: "images/temple_white_pagoda.png"
     },
     {
         id: 5,
@@ -53,7 +53,7 @@ const templesData = [
         highlight: "พระอุโบสถโบราณ",
         fishRelease: false,
         coords: { x: 165, y: 138 },
-        image: "https://images.unsplash.com/photo-1540417931326-407421fbc8eb?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_river_gold.png"
     },
     {
         id: 6,
@@ -64,7 +64,7 @@ const templesData = [
         highlight: "อุโบสถอยุธยา 400 ปี",
         fishRelease: false,
         coords: { x: 172, y: 132 },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kaew-Fa-%281%29.jpg/500px-Kaew-Fa-%281%29.jpg"
+        image: "images/temple_wood_canal.png"
     },
     {
         id: 7,
@@ -75,7 +75,7 @@ const templesData = [
         highlight: "หลวงพ่อโสธรจำลอง",
         fishRelease: false,
         coords: { x: 175, y: 120 },
-        image: "https://images.unsplash.com/photo-1528313437151-57ff0e4ccb50?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_grand_hall.png"
     },
     {
         id: 8,
@@ -86,7 +86,7 @@ const templesData = [
         highlight: "หลวงพ่อขาว (การค้าขาย)",
         fishRelease: true,
         coords: { x: 180, y: 130 },
-        image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_white_pagoda.png"
     },
     {
         id: 9,
@@ -97,7 +97,7 @@ const templesData = [
         highlight: "สถานที่หลวงปู่สดบรรลุธรรม",
         fishRelease: false,
         coords: { x: 230, y: 60 },
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96%E0%B9%8C%E0%B8%9A%E0%B8%99.jpg/500px-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96%E0%B9%8C%E0%B8%9A%E0%B8%99.jpg"
+        image: "images/temple_river_gold.png"
     },
     {
         id: 10,
@@ -108,7 +108,7 @@ const templesData = [
         highlight: "ลอดใต้โบสถ์สะเดาะเคราะห์",
         fishRelease: true,
         coords: { x: 260, y: 55 },
-        image: "https://images.unsplash.com/photo-1602693892398-35ed56a6d655?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_wood_canal.png"
     },
     {
         id: 11,
@@ -119,7 +119,7 @@ const templesData = [
         highlight: "หลวงพ่อโสธรองค์ใหญ่",
         fishRelease: false,
         coords: { x: 290, y: 48 },
-        image: "https://images.unsplash.com/photo-1579201509355-667cb721df75?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_grand_hall.png"
     },
     {
         id: 12,
@@ -130,7 +130,7 @@ const templesData = [
         highlight: "หอไตรไม้โบราณกลางน้ำ",
         fishRelease: false,
         coords: { x: 320, y: 40 },
-        image: "https://images.unsplash.com/photo-1606558458784-0751f3d368e7?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_white_pagoda.png"
     },
     {
         id: 13,
@@ -141,7 +141,7 @@ const templesData = [
         highlight: "พระปรางค์เก่าแก่ที่สุด 600 ปี",
         fishRelease: false,
         coords: { x: 345, y: 35 },
-        image: "https://images.unsplash.com/photo-1533722238356-9a5d3f27de19?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_river_gold.png"
     },
     {
         id: 14,
@@ -152,7 +152,7 @@ const templesData = [
         highlight: "พระนอนองค์ใหญ่ที่สุดในนนท์",
         fishRelease: true,
         coords: { x: 370, y: 30 },
-        image: "https://images.unsplash.com/photo-1616782390885-30f1d5e56e40?auto=format&fit=crop&w=500&q=80"
+        image: "images/temple_wood_canal.png"
     }
 ];
 
