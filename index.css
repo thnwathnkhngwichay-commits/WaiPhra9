@@ -645,3 +645,56 @@ body {
     font-size: 11px;
     border-left: 3px solid var(--primary-color);
 }
+
+/* Custom Styles for Image Mockups & VDO Demo */
+.mockup-view {
+    margin-top: 20px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 16px;
+}
+
+.mockup-label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.mockup-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.modal-image-box {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.modal-mockup-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+.demo-section {
+    background: var(--card-bg);
+}
+
+.video-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    background-color: #000;
+}
+
+.demo-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+}
