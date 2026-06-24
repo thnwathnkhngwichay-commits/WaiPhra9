@@ -1,23 +1,31 @@
-/* Root CSS Variables for Brand Colors & Theme */
+/* 
+   WaiPhra9.com (Easy Version) - Modern Minimalist Style Sheet
+   Inspired by natural Thai river heritage & community tourism
+*/
+
 :root {
-    --bg-color: #FAF6F0; /* Warm Almond Cream */
-    --card-bg: rgba(255, 255, 255, 0.85); /* Semi-transparent White */
-    --text-primary: #2E3A2F; /* Deep Forest/Charcoal */
+    --bg-color: #FAF6F0;       /* Warm Almond Cream */
+    --bg-header: #FAF7F2;      /* Elegant Pale Cream */
+    --card-bg: #FFFFFF;        /* Pure White */
+    --text-primary: #2E3A2F;   /* Deep Forest Charcoal */
     --text-secondary: #5A6B5C; /* Slate Sage */
-    --primary-color: #8D9B7B; /* Olive Sage Green */
-    --primary-light: #D0E2D5; /* Pale Sage */
-    --accent-gold: #E5BA73; /* Warm Gold */
-    --accent-red: #C35A4A; /* Terracotta Red */
-    --border-color: rgba(141, 155, 123, 0.2);
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 10px 15px -3px rgba(46, 58, 47, 0.08), 0 4px 6px -2px rgba(46, 58, 47, 0.03);
-    --shadow-lg: 0 20px 25px -5px rgba(46, 58, 47, 0.12), 0 10px 10px -5px rgba(46, 58, 47, 0.04);
+    --primary-color: #54946F;  /* River Duck Green (Thick Canal) */
+    --primary-light: #D0E2D5;  /* Pale Sage Green */
+    --accent-gold: #C49C5E;    /* Vintage Thai Temple Gold */
+    --accent-gold-light: #F2E3CD;
+    --accent-red: #C35A4A;     /* Terracotta Red */
+    --border-color: rgba(196, 156, 94, 0.15);
+    
+    --shadow-sm: 0 4px 6px -1px rgba(46, 58, 47, 0.04);
+    --shadow-md: 0 10px 15px -3px rgba(46, 58, 47, 0.06), 0 4px 6px -2px rgba(46, 58, 47, 0.02);
+    --shadow-lg: 0 20px 25px -5px rgba(46, 58, 47, 0.08), 0 10px 10px -5px rgba(46, 58, 47, 0.03);
+    
     --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
 }
 
-/* Base resets & fonts */
+/* Base resets */
 * {
     margin: 0;
     padding: 0;
@@ -36,73 +44,70 @@ body {
     min-height: 100vh;
 }
 
-/* App Layout Container (Centered, max-width like mobile screen) */
+/* App Container (Responsive mobile layout: max 480px) */
 .app-container {
     width: 100%;
     max-width: 480px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 70px; /* Space for sticky bottom navigation */
 }
 
-/* Header styling */
-.app-header {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
-    padding: 20px;
-    border-radius: var(--radius-md);
+/* 1. Custom Header (Exact replica of mockup header) */
+.custom-app-header {
+    background-color: var(--bg-header);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
     box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(196, 156, 94, 0.1);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.header-main-title h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: -0.5px;
     display: flex;
     justify-content: center;
-}
-
-.logo {
-    display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
 }
 
-.logo-icon {
-    font-size: 32px;
-    animation: float 4s ease-in-out infinite;
-}
-
-.logo-text h1 {
-    font-family: 'Outfit', 'Noto Sans Thai', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-}
-
-.logo-text p {
-    font-size: 12px;
+.header-meta-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--text-secondary);
-    font-weight: 500;
+    border-top: 1px solid rgba(196, 156, 94, 0.1);
+    padding-top: 10px;
 }
 
-/* Keyframe for floating animation */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+.meta-start::before {
+    content: "📍 ";
 }
 
-/* Alert Banner styling */
+.meta-end::before {
+    content: "🏁 ";
+}
+
+/* Dynamic Alert Banner */
 .alert-banner {
-    background-color: #FFF2D6;
-    border: 1px solid #FFE0A3;
+    background-color: #FFF3D6;
+    border: 1px solid #FFE2A8;
     padding: 12px 16px;
     border-radius: var(--radius-sm);
     display: flex;
-    gap: 12px;
-    font-size: 13px;
-    color: #8A641B;
+    gap: 10px;
+    font-size: 12.5px;
+    color: #8A651E;
     box-shadow: var(--shadow-sm);
-    align-items: flex-start;
-    animation: fadeIn 0.5s ease-out;
+    animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes fadeIn {
@@ -110,59 +115,169 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.alert-icon {
-    font-size: 16px;
-}
-
-/* Standard Section & Card designs */
+/* Section Cards styling */
 .card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 20px;
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
 }
 
 .section-title {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .section-title .icon {
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.subtitle {
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: -12px;
+/* 2. Interactive Route Map Section (Exact replica of mockup layout) */
+.map-section-card {
+    padding: 20px 16px;
+    background-color: var(--card-bg);
+}
+
+.map-inner-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
     margin-bottom: 16px;
 }
 
-/* Selector Group styling */
-.selector-group {
-    margin-bottom: 20px;
+.map-simulation-wrapper {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: #F8F5EE; /* Pale green-cream land background */
+    border: 1px solid var(--border-color);
+    aspect-ratio: 450 / 350;
+    box-shadow: inset 0 2px 8px rgba(46, 58, 47, 0.05);
 }
 
+/* Landscape background contours */
+.map-bg-curves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(84, 148, 111, 0.04) 20%, transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(84, 148, 111, 0.04) 30%, transparent 70%);
+    pointer-events: none;
+}
+
+.svg-map-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Map Markers Styling */
+.map-marker-pin {
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+.map-marker-pin:hover {
+    transform: scale(1.15);
+}
+
+.map-marker-pin .pin-outer {
+    fill: var(--accent-gold);
+    filter: drop-shadow(0 2px 4px rgba(46, 58, 47, 0.15));
+    transition: fill 0.3s;
+}
+
+.map-marker-pin .pin-inner {
+    fill: #FFFFFF;
+}
+
+.map-marker-pin path {
+    fill: var(--accent-gold);
+    transition: fill 0.3s;
+}
+
+.pin-text {
+    font-size: 9.5px;
+    font-weight: 700;
+    fill: var(--text-primary);
+    stroke: #FFFFFF;
+    stroke-width: 3px;
+    paint-order: stroke fill;
+}
+
+.double-line {
+    font-size: 8.5px;
+}
+
+/* Inactive pin styling */
+.map-marker-pin.inactive-pin {
+    opacity: 0.3;
+}
+
+.map-marker-pin.inactive-pin .pin-outer {
+    fill: #A0ABA2;
+}
+
+.map-marker-pin.inactive-pin path {
+    fill: #A0ABA2;
+}
+
+/* Map Legend overlay */
+.map-legend-card {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: var(--shadow-sm);
+    pointer-events: none;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-icon.gold-pin {
+    font-size: 12px;
+    color: var(--accent-gold);
+}
+
+.legend-line.green-line {
+    width: 20px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.legend-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* 3. Smart Trip Selector */
 .selector-group label {
     display: block;
     font-size: 14px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     color: var(--text-secondary);
 }
 
-/* Toggle Buttons for Temple Count */
 .temple-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -170,85 +285,56 @@ body {
 }
 
 .btn-toggle {
-    background-color: rgba(141, 155, 123, 0.1);
+    background-color: rgba(141, 155, 123, 0.08);
     border: 1px solid var(--border-color);
-    padding: 10px 6px;
+    padding: 12px 6px;
     font-size: 12px;
     font-weight: 600;
     border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--text-primary);
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
 .btn-toggle:hover {
-    background-color: rgba(141, 155, 123, 0.2);
+    background-color: rgba(141, 155, 123, 0.15);
 }
 
 .btn-toggle.active {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
     color: white;
-    box-shadow: 0 4px 10px rgba(141, 155, 123, 0.3);
+    box-shadow: 0 4px 10px rgba(196, 156, 94, 0.3);
 }
 
-/* Route Info Card */
-.route-info-card {
-    background-color: rgba(141, 155, 123, 0.05);
-    border: 1px solid rgba(141, 155, 123, 0.15);
-    padding: 16px;
-    border-radius: var(--radius-sm);
-}
-
-.route-badge {
-    display: inline-block;
-    background-color: var(--primary-light);
-    color: #4A5B4C;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-bottom: 6px;
-}
-
-.route-info-card h3 {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.route-info-card p {
-    font-size: 12px;
-    color: var(--text-secondary);
-}
-
-/* Meeting Point Details */
+/* Meeting point details */
 .meeting-point-box {
     border-top: 1px dashed var(--border-color);
     padding-top: 16px;
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
 .meeting-badge {
     display: inline-block;
-    background-color: var(--accent-gold);
-    color: #7A531C;
+    background-color: var(--accent-gold-light);
+    color: #7A551E;
     font-size: 10px;
     font-weight: 700;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .meeting-point-box h3 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
+    margin-bottom: 6px;
 }
 
 .meeting-point-box p {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--text-secondary);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .meeting-actions {
@@ -261,18 +347,14 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    font-size: 12px;
+    padding: 12px;
+    font-size: 11.5px;
     font-weight: 600;
-    text-decoration: none;
     border-radius: var(--radius-sm);
-    transition: background-color 0.2s ease, transform 0.1s ease;
     cursor: pointer;
     border: none;
-}
-
-.btn:active {
-    transform: scale(0.98);
+    transition: all 0.2s;
+    text-decoration: none;
 }
 
 .btn-secondary {
@@ -282,7 +364,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: rgba(141, 155, 123, 0.1);
+    background-color: rgba(196, 156, 94, 0.1);
 }
 
 .line-btn {
@@ -291,80 +373,10 @@ body {
 }
 
 .line-btn:hover {
-    background-color: rgba(37, 211, 102, 0.1);
+    background-color: rgba(37, 211, 102, 0.08);
 }
 
-/* Map Simulation Section */
-.map-simulation {
-    position: relative;
-    border-radius: var(--radius-sm);
-    overflow: hidden;
-    background: #EBF3ED;
-    border: 1px solid var(--border-color);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.svg-map {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Map Marker styles */
-.map-marker {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.map-marker:hover {
-    transform: scale(1.2);
-}
-
-.map-marker.start-point circle {
-    animation: pulse-gold 2s infinite;
-}
-
-.map-marker.end-point circle {
-    animation: pulse-red 2s infinite;
-}
-
-@keyframes pulse-gold {
-    0%, 100% { fill: #e5ba73; }
-    50% { fill: #f3d49f; }
-}
-
-@keyframes pulse-red {
-    0%, 100% { fill: #c35a4a; }
-    50% { fill: #e08b7f; }
-}
-
-.map-label {
-    font-size: 9px;
-    font-weight: 700;
-    fill: var(--text-primary);
-    text-shadow: 0 1px 2px white, 0 -1px 2px white, 1px 0 2px white, -1px 0 2px white;
-}
-
-.font-small {
-    font-size: 7.5px;
-    font-weight: 600;
-    fill: var(--text-secondary);
-}
-
-.map-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(46, 58, 47, 0.85);
-    color: white;
-    padding: 6px 12px;
-    font-size: 10.5px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Temple List Layout */
+/* 4. Dynamic Waterfront Temples List */
 .section-header-flex {
     display: flex;
     justify-content: space-between;
@@ -375,7 +387,7 @@ body {
 .count-badge {
     background-color: var(--primary-color);
     color: white;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     padding: 4px 10px;
     border-radius: 12px;
@@ -384,26 +396,23 @@ body {
 .temple-list-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
-/* Temple Card Design */
 .temple-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 20px;
+    padding: 18px;
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    position: relative;
-    overflow: hidden;
+    gap: 8px;
     animation: slideUp 0.3s ease-out;
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(15px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -414,21 +423,21 @@ body {
 }
 
 .temple-title {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
 }
 
 .status-badge {
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 4px;
 }
 
 .status-badge.weekend-only {
-    background-color: #FFF2D6;
-    color: #8A641B;
-    border: 1px solid #FFE0A3;
+    background-color: #FFF3D6;
+    color: #8A651E;
+    border: 1px solid #FFE2A8;
 }
 
 .status-badge.daily {
@@ -438,7 +447,7 @@ body {
 }
 
 .temple-desc {
-    font-size: 13px;
+    font-size: 12.5px;
     color: var(--text-secondary);
 }
 
@@ -450,7 +459,7 @@ body {
 
 .btn-sm {
     padding: 6px 12px;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 600;
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -464,48 +473,45 @@ body {
 }
 
 .btn-primary-sm:hover {
-    background-color: #788767;
+    background-color: #407556;
 }
 
 .btn-accent-sm {
-    background-color: rgba(229, 186, 115, 0.2);
-    color: #7A531C;
-    border: 1px solid rgba(229, 186, 115, 0.4);
+    background-color: rgba(196, 156, 94, 0.15);
+    color: #7A551E;
+    border: 1px solid rgba(196, 156, 94, 0.3);
 }
 
 .btn-accent-sm:hover {
-    background-color: rgba(229, 186, 115, 0.3);
+    background-color: rgba(196, 156, 94, 0.25);
 }
 
-/* Pricing Table Design */
-.pricing-section {
-    overflow: hidden;
-}
-
+/* 5. Pricing Table styling */
 .pricing-table {
     width: 100%;
     border-collapse: collapse;
     margin: 12px 0;
-    font-size: 12px;
+    font-size: 11.5px;
     text-align: left;
 }
 
 .pricing-table th {
-    background-color: rgba(141, 155, 123, 0.15);
+    background-color: rgba(196, 156, 94, 0.1);
     color: var(--text-primary);
-    padding: 10px;
+    padding: 10px 8px;
     font-weight: 700;
     border-bottom: 2px solid var(--border-color);
 }
 
 .pricing-table td {
-    padding: 10px;
+    padding: 10px 8px;
     border-bottom: 1px solid var(--border-color);
 }
 
 .pricing-table tr.highlight-row {
-    background-color: rgba(229, 186, 115, 0.15);
-    font-weight: 600;
+    background-color: rgba(196, 156, 94, 0.08);
+    font-weight: 700;
+    border-left: 3px solid var(--accent-gold);
 }
 
 .pricing-table td.price {
@@ -518,15 +524,61 @@ body {
     color: var(--text-secondary);
 }
 
-/* App Footer */
-.app-footer {
-    text-align: center;
-    padding: 12px;
-    font-size: 11px;
-    color: var(--text-secondary);
+/* 6. Sticky Bottom Navigation (Exact replica of mockup bottom nav) */
+.custom-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--bg-header);
+    border-top: 1px solid var(--border-color);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    z-index: 90;
+    box-shadow: 0 -4px 10px rgba(46, 58, 47, 0.04);
 }
 
-/* Modal styling for Fish Release Guide */
+.nav-item {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 2px 4px;
+}
+
+.nav-item:hover {
+    color: var(--accent-gold);
+}
+
+.nav-divider {
+    font-size: 12px;
+    color: var(--border-color);
+}
+
+.nav-item.active-nav {
+    color: var(--text-primary);
+    font-weight: 700;
+    position: relative;
+}
+
+.nav-item.active-nav::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-gold);
+    border-radius: 2px;
+}
+
+/* Eco-friendly Fish Release Modal */
 .modal {
     display: none;
     position: fixed;
@@ -540,22 +592,17 @@ body {
     justify-content: center;
     align-items: center;
     padding: 16px;
-    animation: fadeIn 0.25s ease-out;
 }
 
 .modal-content {
     width: 100%;
     max-width: 440px;
     background-color: white;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
     position: relative;
-    animation: scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes scaleUp {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-btn {
@@ -566,6 +613,7 @@ body {
     cursor: pointer;
     color: var(--text-secondary);
     transition: color 0.2s;
+    z-index: 10;
 }
 
 .close-btn:hover {
@@ -579,26 +627,39 @@ body {
 }
 
 .modal-header h2 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
-    color: var(--text-primary);
 }
 
 .modal-header p {
-    font-size: 11.5px;
+    font-size: 11px;
     color: var(--text-secondary);
+}
+
+.modal-image-box {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.modal-mockup-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .fish-column h3 {
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .safe-fish h3 {
@@ -613,11 +674,11 @@ body {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
 }
 
 .fish-column li {
-    font-size: 12px;
+    font-size: 11.5px;
     position: relative;
     padding-left: 14px;
     color: var(--text-secondary);
@@ -639,62 +700,68 @@ body {
 }
 
 .modal-footer-box {
-    background-color: rgba(141, 155, 123, 0.1);
+    background-color: rgba(196, 156, 94, 0.08);
     border-radius: var(--radius-sm);
     padding: 12px;
     font-size: 11px;
-    border-left: 3px solid var(--primary-color);
+    border-left: 3px solid var(--accent-gold);
 }
 
-/* Custom Styles for Image Mockups & VDO Demo */
-.mockup-view {
-    margin-top: 20px;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 16px;
+/* View layouts and Tab Switching */
+.app-view {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.mockup-label {
-    font-size: 13px;
+.app-view.hidden {
+    display: none !important;
+}
+
+.route-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.stat-card {
+    background-color: rgba(141, 155, 123, 0.08);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 12px 6px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-num {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.stat-label {
+    display: block;
+    font-size: 10px;
     font-weight: 600;
-    margin-bottom: 10px;
     color: var(--text-secondary);
 }
 
-.mockup-image {
-    width: 100%;
-    height: auto;
+.route-detail-box {
+    background-color: #F8F5EE;
+    border-left: 4px solid var(--primary-color);
+    padding: 16px;
     border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
 }
 
-.modal-image-box {
-    width: 100%;
-    margin-bottom: 16px;
+.route-detail-box h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
-.modal-mockup-image {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-}
-
-.demo-section {
-    background: var(--card-bg);
-}
-
-.video-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-    background-color: #000;
-}
-
-.demo-gif {
-    width: 100%;
-    height: auto;
-    display: block;
+.route-detail-box p {
+    font-size: 12px;
+    color: var(--text-secondary);
 }

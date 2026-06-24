@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaiPhra9.com (Easy Version) - ทริปไหว้พระริมน้ำอ้อมนนท์-บางใหญ่</title>
+    <title>WaiPhra9.com (Easy Version) - แผนที่เส้นทางเรือคลองอ้อมนนท์</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,187 +12,257 @@
 <body>
     <!-- App Container -->
     <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="logo">
-                <span class="logo-icon">🪷</span>
-                <div class="logo-text">
-                    <h1>WaiPhra9.com</h1>
-                    <p class="tagline">Easy Version • ไหว้พระวิถีริมคลองอ้อมนนท์</p>
-                </div>
+        <!-- 1. Header (Premium style from image mockup) -->
+        <header class="custom-app-header">
+            <div class="header-main-title">
+                <h2>แผนที่เส้นทางเรือคลองอ้อมนนท์ 🛶 ───> บางใหญ่</h2>
+            </div>
+            <div class="header-meta-info">
+                <span class="meta-start">เริ่ม: บางใหญ่</span>
+                <span class="meta-end">ปลายทาง: วัดราษฎร์ประคองธรรม</span>
             </div>
         </header>
 
         <!-- Dynamic Weekday Alert Banner -->
         <div id="weekday-alert" class="alert-banner">
             <span class="alert-icon">⚠️</span>
-            <span class="alert-text">วันนี้เป็นวันธรรมดา ตลาดน้ำบางจุดอาจปิดให้บริการ แนะนำให้เยี่ยมชมสถาปัตยกรรมและท่าน้ำวัดแทน</span>
+            <span class="alert-text">วันนี้เป็นวันธรรมดา ตลาดน้ำบางจุดอาจปิดให้บริการ แนะนำให้เน้นชมวัดและการล่องเรือชมธรรมชาติ</span>
         </div>
 
         <!-- Main Content -->
         <main class="app-main">
-            <!-- Prototype Video Demo -->
-            <section class="section card demo-section">
-                <h2 class="section-title"><span class="icon">🎥</span> วิดีโอสาธิตการใช้งานต้นแบบ (Easy)</h2>
-                <div class="video-container">
-                    <img src="images/prototype_demo.webp" alt="วิดีโอสาธิตระบบ" class="demo-gif">
-                </div>
-            </section>
-
-            <!-- 1. Smart Trip Selector -->
-            <section class="section card trip-selector">
-                <h2 class="section-title"><span class="icon">🧭</span> จัดทริปในสไตล์คุณ</h2>
-                
-                <div class="selector-group">
-                    <label>1. เลือกจำนวนวัดที่ต้องการไป:</label>
-                    <div class="temple-buttons">
-                        <button class="btn-toggle active" data-count="3">3 วัด (ด่วน/สะดวก)</button>
-                        <button class="btn-toggle" data-count="5">5 วัด (ครึ่งวัน)</button>
-                        <button class="btn-toggle" data-count="9">9 วัด (จัดเต็มสิริมงคล)</button>
+            
+            <!-- View 1: Route Info (ข้อมูลเส้นทาง) - Hidden by default -->
+            <div id="view-route-info" class="app-view hidden">
+                <section class="section card">
+                    <h2 class="section-title"><span class="icon">ℹ️</span> ข้อมูลเส้นทางล่องเรือ</h2>
+                    
+                    <!-- Stats Grid -->
+                    <div class="route-stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-num">15 กม.</span>
+                            <span class="stat-label">ระยะทางรวม</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num">14 จุด</span>
+                            <span class="stat-label">ท่าเรือหยุด</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num">2.5 ชม.</span>
+                            <span class="stat-label">เวลาเดินทาง</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="selector-group">
-                    <label>2. เส้นทางเดินเรือชุมชน (เรือชาวบ้าน):</label>
-                    <div class="route-info-card">
-                        <span class="route-badge">ปลอดภัย ไม่ลงแม่น้ำใหญ่</span>
-                        <h3>เส้นทางบางใหญ่ - คลองอ้อมนนท์</h3>
-                        <p>ล่องขนานตามคลองบางกอกน้อยดั้งเดิม หลีกเลี่ยงคลื่นลมแรงในแม่น้ำเจ้าพระยา ส่งเสริมรายได้สู่ชาวสวนและคนขับเรือท้องถิ่นโดยตรง</p>
+                    <!-- Description Detail -->
+                    <div class="route-detail-box">
+                        <h3>🌿 สัมผัสวิถีชีวิตดั้งเดิมอ้อมนนท์</h3>
+                        <p>ท่องเที่ยววิถีชุมชนริมน้ำอ้อมนนท์-บางใหญ่ ล่องเรือชมธรรมชาติ สวนส้มโอเมืองนนท์ ทุเรียนนนท์ และบ้านไม้เรือนไทยโบราณที่หาชมได้ยาก โดยการเดินทางด้วยเรือท้องถิ่นที่ปลอดภัยและสงบสุข</p>
                     </div>
-                </div>
 
-                <!-- Meeting Point Info -->
-                <div class="meeting-point-box">
-                    <div class="meeting-badge">จุดรวมพลนัดหมาย</div>
-                    <h3>📍 ร้านเอ๋ปลาปล่อย (ตลาดน้ำวัดชลอ)</h3>
-                    <p>มีที่จอดรถสะดวกสบาย มีท่าน้ำสำหรับขึ้นเรือหางยาวชาวบ้าน และสามารถช็อปชิมของอร่อยริมน้ำที่ตลาดน้ำวัดชลอก่อนเริ่มเดินทางได้</p>
-                    <div class="meeting-actions">
-                        <a href="tel:0619655364" class="btn btn-secondary">📞 โทรหาร้านเอ๋ปลาปล่อย (061-965-5364)</a>
-                        <button class="btn btn-secondary line-btn" onclick="showPromptPay()">🟢 สแกน PromptPay</button>
+                    <!-- Route Map Image from mockup -->
+                    <div class="mockup-view">
+                        <p class="mockup-label">🗺️ แผนที่เส้นทางเรือคลองอ้อมนนท์ (จากต้นแบบ):</p>
+                        <img src="images/canal_map_ui.png" alt="แผนที่ล่องเรือนำทางบางใหญ่" class="mockup-image">
                     </div>
-                </div>
-            </section>
 
-            <!-- 2. Interactive Route Map Overlay -->
-            <section class="section card map-section">
-                <h2 class="section-title"><span class="icon">🗺️</span> แผนที่ล่องเรือนำทางอัจฉริยะ</h2>
-                <p class="subtitle">เส้นทางน้ำในคลองบางกอกน้อย & คลองอ้อมนนท์ (Custom Polyline Overlay)</p>
-                
-                <div class="map-simulation">
-                    <!-- Custom SVG Route Map to simulate Custom Polylines -->
-                    <svg viewBox="0 0 400 200" class="svg-map">
-                        <!-- Canal river path -->
-                        <path d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#d0e2d5" stroke-width="24" stroke-linecap="round" />
-                        <path d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#8d9b7b" stroke-width="4" stroke-dasharray="8,6" stroke-linecap="round" />
-                        
-                        <!-- Route Line dynamically highlighted -->
-                        <path id="map-route-line" d="M 30,170 C 120,130 150,150 220,70 C 270,10 320,50 370,30" fill="none" stroke="#e5ba73" stroke-width="6" stroke-linecap="round" />
-
-                        <!-- Start Point Marker -->
-                        <g class="map-marker start-point" transform="translate(30, 170)">
-                            <circle r="10" fill="#e5ba73" />
-                            <circle r="4" fill="#faf6f0" />
-                            <text y="-15" text-anchor="middle" class="map-label">วัดชลอ (จุดรวมพล)</text>
-                        </g>
-
-                        <!-- Temple Markers -->
-                        <g id="marker-temple-2" class="map-marker" transform="translate(130, 140)">
-                            <circle r="7" fill="#8d9b7b" />
-                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดโพธิ์บางโอ</text>
-                        </g>
-                        
-                        <g id="marker-temple-3" class="map-marker" transform="translate(180, 130)">
-                            <circle r="7" fill="#8d9b7b" />
-                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดอุทยาน</text>
-                        </g>
-                        
-                        <g id="marker-temple-4" class="map-marker" transform="translate(230, 60)">
-                            <circle r="7" fill="#8d9b7b" />
-                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดตะเคียน</text>
-                        </g>
-                        
-                        <g id="marker-temple-5" class="map-marker" transform="translate(320, 40)">
-                            <circle r="7" fill="#8d9b7b" />
-                            <text y="-12" text-anchor="middle" class="map-label font-small">วัดอัมพวัน</text>
-                        </g>
-
-                        <!-- End Point Marker -->
-                        <g id="marker-end" class="map-marker end-point" transform="translate(370, 30)">
-                            <circle r="9" fill="#c35a4a" />
-                            <circle r="3" fill="#faf6f0" />
-                            <text y="-15" text-anchor="middle" class="map-label">วัดราษฎร์ประคองธรรม</text>
-                        </g>
-                    </svg>
-                    <div class="map-info">
-                        <span>⛵ กำลังคำนวณเส้นทางทางน้ำเฉพาะคลอง...</span>
-                        <span>ปลอดภัย 100% หลีกเลี่ยงเส้นทางทางบก</span>
+                    <!-- Custom Route Info UI Mockup from image folder -->
+                    <div class="mockup-view">
+                        <p class="mockup-label">🖼️ ภาพจำลองหน้าข้อมูลเส้นทางท่องเที่ยว:</p>
+                        <img src="images/route_info_ui.png" alt="ข้อมูลเส้นทางล่องเรือ" class="mockup-image">
                     </div>
-                </div>
+                </section>
+            </div>
 
-                <!-- Map Mockup Image -->
-                <div class="mockup-view">
-                    <p class="mockup-label">🖼️ ภาพจำลองหน้าจอแผนที่อัจฉริยะภาษาไทย:</p>
-                    <img src="images/canal_map_ui.png" alt="แผนที่ล่องเรือนำทางบางใหญ่" class="mockup-image">
-                </div>
-            </section>
+            <!-- View 2: Ticket Booking (จองตั๋ว) - Hidden by default -->
+            <div id="view-booking" class="app-view hidden">
+                <!-- Smart Trip Selector -->
+                <section class="section card trip-selector">
+                    <h2 class="section-title"><span class="icon">🧭</span> จองทริปเรือตามใจชอบ</h2>
+                    
+                    <div class="selector-group">
+                        <label>ปรับแต่งจำนวนวัดท่องเที่ยว:</label>
+                        <div class="temple-buttons">
+                            <button class="btn-toggle active" data-count="3">3 วัด (ทริปสั้น)</button>
+                            <button class="btn-toggle" data-count="5">5 วัด (ครึ่งวัน)</button>
+                            <button class="btn-toggle" data-count="9">9 วัด (เต็มวัน)</button>
+                        </div>
+                    </div>
 
-            <!-- 3. Dynamic Waterfront Temples List -->
-            <section class="section">
-                <div class="section-header-flex">
-                    <h2 class="section-title"><span class="icon">🕌</span> วัดริมน้ำในเส้นทางของคุณ</h2>
-                    <span id="temple-count-badge" class="count-badge">แสดงผล 3 วัด</span>
-                </div>
+                    <!-- Meeting Point Info -->
+                    <div class="meeting-point-box">
+                        <div class="meeting-badge">จุดรวมพลและท่าเรือหลัก</div>
+                        <h3>📍 ร้านเอ๋ปลาปล่อย (ตลาดน้ำวัดชลอ)</h3>
+                        <p>บริการท่าน้ำขึ้นเรือ จอดรถฟรี และจำหน่ายสัตว์น้ำสำหรับปล่อย (ปลาหมอ, ปลาไหล, ปลาดุก, ปลาสายน้ำผึ้ง, ปลานางฟ้า, ปลาแรด และอื่นๆ)</p>
+                        <div class="meeting-actions">
+                            <a href="tel:0619655364" class="btn btn-secondary">📞 โทรคิวเรือชาวบ้าน (061-965-5364)</a>
+                            <button class="btn btn-secondary line-btn" onclick="showPromptPay()">🟢 จ่ายผ่าน PromptPay</button>
+                        </div>
+                    </div>
+                </section>
 
-                <div id="temple-list" class="temple-list-grid">
-                    <!-- Template cards will be injected by JavaScript -->
-                </div>
-            </section>
+                <!-- Community Boat Pricing & Standardized Cost -->
+                <section class="section card pricing-section">
+                    <h2 class="section-title"><span class="icon">💵</span> ค่าบริการเรือชาวบ้านคงที่</h2>
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>ระยะทริป</th>
+                                <th>ประเภททริป</th>
+                                <th>ค่าเหมาลำ (สูงสุด 8 คน)</th>
+                                <th>เวลาโดยประมาณ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="price-row-3" class="highlight-row">
+                                <td>3 วัด</td>
+                                <td>ทริปด่วนสิริมงคล</td>
+                                <td class="price">500 บาท</td>
+                                <td>1.5 - 2 ชั่วโมง</td>
+                            </tr>
+                            <tr id="price-row-5">
+                                <td>5 วัด</td>
+                                <td>ทริปครึ่งวันอ้อมนนท์</td>
+                                <td class="price">800 บาท</td>
+                                <td>3 - 3.5 ชั่วโมง</td>
+                            </tr>
+                            <tr id="price-row-9">
+                                <td>9 วัด</td>
+                                <td>ทริปใหญ่สิริมงคล</td>
+                                <td class="price">1,200 บาท</td>
+                                <td>5 - 6 ชั่วโมง</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pricing-note">
+                        <p>💡 <strong>หมายเหตุ:</strong> สนับสนุนเงินสู่ชาวบ้านขับเรือ 100% (มีชูชีพและประกันอุบัติเหตุทางน้ำรวมแล้ว)</p>
+                    </div>
+                </section>
+            </div>
 
-            <!-- 4. Community Boat Pricing & Standardized Cost -->
-            <section class="section card pricing-section">
-                <h2 class="section-title"><span class="icon">💵</span> ตารางค่าบริการเรือมาตรฐานชุมชน</h2>
-                <p class="subtitle">ราคาโปร่งใส ไม่มีการโก่งราคาหน้างาน สนับสนุนกลุ่มเรือหางยาวชาวสวนโดยตรง</p>
-                
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th>จำนวนวัดในทริป</th>
-                            <th>ประเภททริป</th>
-                            <th>ค่าเรือเหมาลำ (สูงสุด 8 คน)</th>
-                            <th>ระยะเวลาประมาณ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr id="price-row-3" class="highlight-row">
-                            <td>3 วัด</td>
-                            <td>ทริปด่วนสิริมงคล</td>
-                            <td class="price">500 บาท</td>
-                            <td>1.5 - 2 ชั่วโมง</td>
-                        </tr>
-                        <tr id="price-row-5">
-                            <td>5 วัด</td>
-                            <td>ทริปครึ่งวันอ้อมนนท์</td>
-                            <td class="price">800 บาท</td>
-                            <td>3 - 3.5 ชั่วโมง</td>
-                        </tr>
-                        <tr id="price-row-9">
-                            <td>9 วัด</td>
-                            <td>ทริปใหญ่เสริมบุญสะสมบุญ</td>
-                            <td class="price">1,200 บาท</td>
-                            <td>5 - 6 ชั่วโมง</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="pricing-note">
-                    <p>💡 <strong>หมายเหตุ:</strong> ค่าเรือรวมประกันอุบัติเหตุทางน้ำและเสื้อชูชีพสำหรับผู้โดยสารทุกท่านแล้ว</p>
-                </div>
-            </section>
+            <!-- View 3: Map View (แผนที่) - Active by default -->
+            <div id="view-map" class="app-view">
+                <!-- Interactive Route Map Section (Exact replica of mockup image) -->
+                <section class="section card map-section-card">
+                    <h3 class="map-inner-title">คลองอ้อมนนท์ - บางใหญ่</h3>
+                    
+                    <div class="selector-group" style="margin-bottom: 16px;">
+                        <div class="temple-buttons">
+                            <button class="btn-toggle active" data-count="3">3 วัด (ทริปสั้น)</button>
+                            <button class="btn-toggle" data-count="5">5 วัด (ครึ่งวัน)</button>
+                            <button class="btn-toggle" data-count="9">9 วัด (เต็มวัน)</button>
+                        </div>
+                    </div>
+                    
+                    <div class="map-simulation-wrapper">
+                        <!-- Custom Topography curves in background -->
+                        <div class="map-bg-curves"></div>
+
+                        <!-- Custom SVG River Route Map -->
+                        <svg viewBox="0 0 450 350" class="svg-map-canvas">
+                            <!-- Canal River Path (Thick natural duck green) -->
+                            <path id="river-bg-path" d="M 25,60 C 15,100 15,180 50,180 C 85,180 90,140 120,130 C 170,110 180,180 220,180 C 265,180 270,120 295,120 C 330,120 330,260 365,260 C 400,260 410,180 435,180" fill="none" stroke="#54946F" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" />
+                            
+                            <!-- Water line (Light inner highlight) -->
+                            <path id="river-inline-path" d="M 25,60 C 15,100 15,180 50,180 C 85,180 90,140 120,130 C 170,110 180,180 220,180 C 265,180 270,120 295,120 C 330,120 330,260 365,260 C 400,260 410,180 435,180" fill="none" stroke="#68AB85" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                            
+                            <!-- Route dotted line dynamically drawn -->
+                            <path id="map-route-line" d="M 50,180 C 85,180 90,140 120,130 C 170,110 180,180 220,180 C 265,180 270,120 295,120 C 330,120 330,260 365,260 C 400,260 410,180 435,180" fill="none" stroke="#E5BA73" stroke-width="5" stroke-dasharray="8,6" stroke-linecap="round" stroke-linejoin="round" />
+
+                            <!-- Water flow arrows -->
+                            <g transform="translate(25, 120) rotate(80)">
+                                <path d="M-4,-4 L4,0 L-4,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                            <g transform="translate(160, 135) rotate(-20)">
+                                <path d="M-4,-4 L4,0 L-4,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                            </g>
+                            <g transform="translate(325, 190) rotate(90)">
+                                <path d="M-4,-4 L4,0 L-4,4" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+                            </g>
+
+                            <!-- Marker 1: Bang Yai (Top Left) -->
+                            <g id="marker-by" class="map-marker-pin active-pin" transform="translate(30, 80)">
+                                <circle r="18" class="pin-outer" />
+                                <circle r="14" class="pin-inner" />
+                                <path d="M-6,2 L6,2 L4,-2 L-4,-2 Z" fill="#C49C5E" />
+                                <text y="28" text-anchor="middle" class="pin-text">บางใหญ่</text>
+                            </g>
+
+                            <!-- Marker 2: Wat Chalo (First temple) -->
+                            <g id="marker-temple-1" class="map-marker-pin active-pin" transform="translate(90, 160)">
+                                <circle r="18" class="pin-outer" />
+                                <circle r="14" class="pin-inner" />
+                                <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
+                                <text y="28" text-anchor="middle" class="pin-text">วัดชลอ</text>
+                            </g>
+                            
+                            <!-- Marker 3: Wat Uthayan -->
+                            <g id="marker-temple-8" class="map-marker-pin" transform="translate(200, 150)">
+                                <circle r="18" class="pin-outer" />
+                                <circle r="14" class="pin-inner" />
+                                <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
+                                <text y="28" text-anchor="middle" class="pin-text">วัดอุทยาน</text>
+                            </g>
+                            
+                            <!-- Marker 4: Wat Takhian -->
+                            <g id="marker-temple-10" class="map-marker-pin" transform="translate(300, 120)">
+                                <circle r="18" class="pin-outer" />
+                                <circle r="14" class="pin-inner" />
+                                <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
+                                <text y="28" text-anchor="middle" class="pin-text">วัดตะเคียน</text>
+                            </g>
+                            
+                            <!-- Marker 5: Wat Rat Prakong Tham (End point) -->
+                            <g id="marker-temple-14" class="map-marker-pin" transform="translate(400, 210)">
+                                <circle r="18" class="pin-outer" />
+                                <circle r="14" class="pin-inner" />
+                                <path d="M -6,6 L 6,6 L 6,1 L 4,-1 L 4,-5 L 2,-5 L 2,-11 L 0,-15 L -2,-11 L -2,-5 L -4,-5 L -4,-1 Z" fill="#C49C5E" />
+                                <text y="28" text-anchor="middle" class="pin-text double-line">วัดราษฎร์</text>
+                                <text y="38" text-anchor="middle" class="pin-text double-line">ประคองธรรม</text>
+                            </g>
+                        </svg>
+
+                        <!-- Map Legend (Bottom left corner card) -->
+                        <div class="map-legend-card">
+                            <div class="legend-item">
+                                <span class="legend-icon gold-pin">🛕</span>
+                                <span class="legend-label">ท่าเรือ/วัด</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-line green-line"></span>
+                                <span class="legend-label">เส้นทางเรือ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Mockup Image below SVG (Alternative View) -->
+                    <div class="mockup-view">
+                        <p class="mockup-label">🖼️ ภาพจำลองหน้าจอแผนที่อัจฉริยะภาษาไทย:</p>
+                        <img src="images/canal_map_ui.png" alt="แผนที่ล่องเรือนำทางบางใหญ่" class="mockup-image">
+                    </div>
+                </section>
+
+                <!-- Dynamic Waterfront Temples List -->
+                <section class="section">
+                    <div class="section-header-flex">
+                        <h2 class="section-title"><span class="icon">🕌</span> รายละเอียดวัดริมน้ำในทริป</h2>
+                        <span id="temple-count-badge" class="count-badge">แสดงผล 3 วัด</span>
+                    </div>
+
+                    <div id="temple-list" class="temple-list-grid">
+                        <!-- Template cards will be injected by JavaScript -->
+                    </div>
+                </section>
+            </div>
         </main>
 
-        <!-- Footer -->
-        <footer class="app-footer">
-            <p>© 2026 WaiPhra9.com. ส่งเสริมการท่องเที่ยวชุมชนริมน้ำนนทบุรีอย่างยั่งยืน</p>
-        </footer>
+        <!-- Footer / Sticky Bottom Navigation Menu from image mockup -->
+        <nav class="custom-bottom-nav">
+            <div class="nav-item" data-view="route-info">ข้อมูลเส้นทาง</div>
+            <div class="nav-divider">|</div>
+            <div class="nav-item" data-view="booking">จองตั๋ว</div>
+            <div class="nav-divider">|</div>
+            <div class="nav-item active-nav" data-view="map">แผนที่</div>
+        </nav>
     </div>
 
     <!-- Eco-friendly Fish Release Modal -->
@@ -204,7 +274,7 @@
                 <p>ได้บุญเต็มร้อย ธรรมชาติไม่ถูกทำลาย ณ คลองอ้อมนนท์</p>
             </div>
             <div class="modal-body">
-                <!-- Fish Release Mockup Image -->
+                <!-- Infographic Image from images folder -->
                 <div class="modal-image-box">
                     <img src="images/fish_release_ui.png" alt="คู่มือปล่อยปลาภาษาไทย" class="modal-mockup-image">
                 </div>
@@ -213,10 +283,10 @@
                     <h3>✅ ปลาท้องถิ่นที่ปล่อยได้ (เหมาะกับสภาพคลอง)</h3>
                     <ul>
                         <li>
-                            <strong>ปลาช่อน / ปลาหมอ:</strong> ปล่อยบริเวณชายตลิ่งที่มีผักตบชวาหรือพืชน้ำหนาแน่น น้ำไหลไม่แรง
+                            <strong>ปลาช่อน / ปลาหมอ / ปลาแรด:</strong> ปล่อยบริเวณชายตลิ่งที่มีผักตบชวาหรือพืชน้ำหนาแน่น น้ำไหลไม่แรง
                         </li>
                         <li>
-                            <strong>ปลาตะเพียน:</strong> ปล่อยลงกลางคลองที่มีน้ำไหลผ่านและอากาศถ่ายเทได้ดี
+                            <strong>ปลาตะเพียน / ปลานางฟ้า / ปลาสายน้ำผึ้ง:</strong> ปล่อยลงกลางคลองที่มีน้ำไหลผ่านและอากาศถ่ายเทได้ดี
                         </li>
                         <li>
                             <strong>ปลาไหล:</strong> ปล่อยเฉพาะตลิ่งที่เป็นดินเลน น้ำตื้นไหลเอื่อยๆ

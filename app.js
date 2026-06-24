@@ -162,9 +162,9 @@ if (isWeekend) {
 
 // Map path stroke arrays for different temple counts (illustrative path tracing)
 const pathDashArrays = {
-    3: "120, 400", // stops early at Wat Uthayan/Wat Bot Bon area
-    5: "250, 400", // stops around Wat Amphawan
-    9: "400, 400"  // goes all the way to Wat Rat Prakong Tham
+    3: "220, 500", // stops around Wat Uthayan
+    5: "330, 500", // stops around Wat Takhian
+    9: "500, 500"  // goes all the way to Wat Rat Prakong Tham
 };
 
 // Filter and select specific temples for the 3/5/9 routes
@@ -237,43 +237,30 @@ function renderTemples() {
 
 // Update Map markers opacity based on active temples
 function updateMapMarkers(activeTemples) {
-    const allMarkers = {
-        2: document.getElementById("marker-temple-2"),
-        3: document.getElementById("marker-temple-3"),
-        4: document.getElementById("marker-temple-4"),
-        5: document.getElementById("marker-temple-5"),
-        "end": document.getElementById("marker-end")
+    // Map of temple ID to its SVG element ID
+    const markerIds = {
+        1: "marker-temple-1",
+        8: "marker-temple-8",
+        10: "marker-temple-10",
+        14: "marker-temple-14"
     };
 
-    // Reset all markers
-    Object.values(allMarkers).forEach(marker => {
+    // Reset all markers to inactive
+    Object.values(markerIds).forEach(id => {
+        const marker = document.getElementById(id);
         if (marker) {
-            marker.style.opacity = "0.2";
-            marker.querySelector("circle").setAttribute("fill", "#8d9b7b");
+            marker.classList.add("inactive-pin");
         }
     });
 
-    // Highlight active markers
+    // Make active markers fully visible
     activeTemples.forEach(temple => {
-        if (temple.id === 3 && allMarkers[2]) {
-            allMarkers[2].style.opacity = "1";
-            allMarkers[2].querySelector("circle").setAttribute("fill", "#e5ba73");
-        }
-        if (temple.id === 8 && allMarkers[3]) {
-            allMarkers[3].style.opacity = "1";
-            allMarkers[3].querySelector("circle").setAttribute("fill", "#e5ba73");
-        }
-        if (temple.id === 10 && allMarkers[4]) {
-            allMarkers[4].style.opacity = "1";
-            allMarkers[4].querySelector("circle").setAttribute("fill", "#e5ba73");
-        }
-        if (temple.id === 12 && allMarkers[5]) {
-            allMarkers[5].style.opacity = "1";
-            allMarkers[5].querySelector("circle").setAttribute("fill", "#e5ba73");
-        }
-        if (temple.id === 14 && allMarkers["end"]) {
-            allMarkers["end"].style.opacity = "1";
-            allMarkers["end"].querySelector("circle").setAttribute("fill", "#c35a4a");
+        const id = markerIds[temple.id];
+        if (id) {
+            const marker = document.getElementById(id);
+            if (marker) {
+                marker.classList.remove("inactive-pin");
+            }
         }
     });
 }
@@ -314,16 +301,94 @@ window.onclick = function(event) {
     }
 };
 
-// Handle temple count buttons click
+// Handle temple count buttons click (synchronized across all tabs)
 toggleButtons.forEach(button => {
     button.addEventListener("click", () => {
-        toggleButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
+        const count = button.getAttribute("data-count");
+        currentCount = parseInt(count, 10);
         
-        currentCount = parseInt(button.getAttribute("data-count"), 10);
+        // Synchronize active states across all buttons with same count
+        toggleButtons.forEach(btn => {
+            if (btn.getAttribute("data-count") === count) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+        
         renderTemples();
     });
 });
 
+// Navigation Tab Switching
+const navItems = document.querySelectorAll(".nav-item");
+const views = {
+    "route-info": document.getElementById("view-route-info"),
+    "booking": document.getElementById("view-booking"),
+    "map": document.getElementById("view-map")
+};
+
+navItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const targetView = item.getAttribute("data-view");
+        if (!targetView || !views[targetView]) return;
+
+        // Update active class on nav items
+        navItems.forEach(nav => nav.classList.remove("active-nav"));
+        item.classList.add("active-nav");
+
+        // Toggle hidden class on views
+        Object.keys(views).forEach(key => {
+            if (key === targetView) {
+                views[key].classList.remove("hidden");
+            } else {
+                views[key].classList.add("hidden");
+            }
+        });
+        
+        // Auto scroll to top on switch for better mobile experience
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
+// Interactive SVG Map Pin Clicks
+function setupMapPinClicks() {
+    const pins = {
+        1: document.getElementById("marker-temple-1"),
+        8: document.getElementById("marker-temple-8"),
+        10: document.getElementById("marker-temple-10"),
+        14: document.getElementById("marker-temple-14")
+    };
+
+    Object.entries(pins).forEach(([templeId, pinElement]) => {
+        if (pinElement) {
+            pinElement.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const id = parseInt(templeId, 10);
+                const temple = templesData.find(t => t.id === id);
+                
+                // Only trigger if the temple is currently active on the route
+                const activeTemples = getRouteTemples(currentCount);
+                const isActive = activeTemples.some(t => t.id === id);
+                
+                if (isActive && temple) {
+                    showWorshipGuide(temple.name, temple.highlight);
+                } else if (temple) {
+                    alert(`🛕 ${temple.name}\n\nวัดนี้ไม่ได้อยู่ในแผนเส้นทางท่องเที่ยว ${currentCount} วัดที่คุณเลือกขณะนี้\n(คุณสามารถเปลี่ยนจำนวนวัดเพื่อเปิดเส้นทางมาที่วัดนี้ได้ครับ)`);
+                }
+            });
+        }
+    });
+
+    const markerBy = document.getElementById("marker-by");
+    if (markerBy) {
+        markerBy.addEventListener("click", (e) => {
+            e.stopPropagation();
+            alert("📍 จุดเริ่มต้น: อ.บางใหญ่\n\nจุดรวมพลขึ้นเรือ และจุดปล่อยปลาเชิงอนุรักษ์ ณ คลองอ้อมนนท์");
+        });
+    }
+}
+
 // Initialize on page load
 renderTemples();
+setupMapPinClicks();
