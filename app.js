@@ -666,7 +666,10 @@ const translations = {
         trip_3: "3 วัด (ทริปสั้น)",
         trip_5: "5 วัด (ครึ่งวัน)",
         trip_9: "9 วัด (เต็มวัน)",
-        btn_share_trip: "📤 แชร์ทริปนี้ให้เพื่อน"
+        btn_share_trip: "📤 แชร์ทริปนี้ให้เพื่อน",
+        promo_title: "สัมผัสเสน่ห์สายน้ำแห่งศรัทธา",
+        promo_subtitle: "เปิดประสบการณ์ล่องเรือไหว้พระคลองอ้อมนนท์-บางใหญ่ ในมุมที่คุณไม่เคยเห็น",
+        promo_btn: "เริ่มจองทริปเลย!"
     },
     en: {
         app_title: "Canal Boat Route 🛶 ───> Bang Yai",
@@ -676,7 +679,10 @@ const translations = {
         trip_3: "3 Temples (Short)",
         trip_5: "5 Temples (Half Day)",
         trip_9: "9 Temples (Full Day)",
-        btn_share_trip: "📤 Share this trip"
+        btn_share_trip: "📤 Share this trip",
+        promo_title: "Experience the River of Faith",
+        promo_subtitle: "Discover the unseen beauty of Nonthaburi canal boat tours.",
+        promo_btn: "Book a Trip Now!"
     },
     zh: {
         app_title: "运河游船路线 🛶 ───> 挽艾",
@@ -686,7 +692,10 @@ const translations = {
         trip_3: "3 座寺庙 (短程)",
         trip_5: "5 座寺庙 (半日)",
         trip_9: "9 座寺庙 (全日)",
-        btn_share_trip: "📤 分享此行程"
+        btn_share_trip: "📤 分享此行程",
+        promo_title: "体验信仰之河的魅力",
+        promo_subtitle: "探索暖武里运河游船未曾见过的美景。",
+        promo_btn: "立即预订！"
     }
 };
 
