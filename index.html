@@ -200,16 +200,26 @@
                             <option value="13:00">13:00 น. (ช่วงบ่าย)</option>
                             <option value="16:00">16:00 น. (ชมพระอาทิตย์ตก)</option>
                         </select>
+                        <button onclick="confirmBookingLINE()" class="btn btn-primary mt-2" style="width: 100%; margin-top: 15px; background: #00B900; border-color: #00B900; box-shadow: 0 4px 15px rgba(0, 185, 0, 0.4);">
+                            💬 ยืนยันการจองผ่าน LINE
+                        </button>
                     </div>
 
-                    <!-- Meeting Point Info -->
-                    <div class="meeting-point-box">
-                        <div class="meeting-badge">จุดรวมพลและท่าเรือหลัก</div>
+                    <!-- Meeting Point Info & Contact -->
+                    <div class="meeting-point-box" style="text-align: center;">
+                        <div class="meeting-badge">จุดรวมพลและติดต่อจองเรือ</div>
                         <h3>📍 ร้านเอ๋ปลาปล่อย (ตลาดน้ำวัดชลอ)</h3>
-                        <p>บริการท่าน้ำขึ้นเรือ จอดรถฟรี และจำหน่ายสัตว์น้ำสำหรับปล่อย (ปลาหมอ, ปลาไหล, ปลาดุก, ปลาสายน้ำผึ้ง, ปลานางฟ้า, ปลาแรด และอื่นๆ)</p>
-                        <div class="meeting-actions">
-                            <a href="tel:0619655364" class="btn btn-secondary">📞 โทรคิวเรือชาวบ้าน (061-965-5364)</a>
-                            <button class="btn btn-secondary line-btn" onclick="showPromptPay()">🟢 จ่ายผ่าน PromptPay</button>
+                        
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin: 20px 0;">
+                            <div style="background: white; padding: 10px; border-radius: 12px; display: inline-block;">
+                                <img src="images/line-qr.png" alt="LINE QR Code" style="width: 150px; height: 150px; display: block;">
+                                <p style="margin: 5px 0 0 0; font-weight: bold; color: #00B900;">LINE ID: markzer</p>
+                            </div>
+                            
+                            <div class="contact-buttons" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+                                <a href="tel:0841652516" class="btn btn-secondary">📞 แอดมิน (084-165-2516)</a>
+                                <a href="tel:0619655364" class="btn btn-secondary">📞 เอ๋ปลาปล่อย (061-965-5364)</a>
+                            </div>
                         </div>
                     </div>
                 </section>

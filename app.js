@@ -870,3 +870,47 @@ if ('serviceWorker' in navigator) {
             .catch(err => console.log('ServiceWorker registration failed: ', err));
     });
 }
+
+// --- LINE Booking Integration ---
+window.confirmBookingLINE = function() {
+    const dateInput = document.getElementById("booking-date").value;
+    const timeInput = document.getElementById("booking-time").value;
+    
+    // Validate inputs
+    if (!dateInput) {
+        alert("กรุณาเลือกวันที่เดินทางครับ / Please select a date");
+        return;
+    }
+    
+    // Format date nicely (DD/MM/YYYY)
+    const [year, month, day] = dateInput.split("-");
+    const formattedDate = `${day}/${month}/${year}`;
+    
+    // Get the selected package
+    let packageStr = "3 วัด (ทริปสั้น)";
+    if (typeof currentCount !== 'undefined') {
+        if (currentCount === 5) packageStr = "5 วัด (ครึ่งวัน)";
+        if (currentCount === 9) packageStr = "9 วัด (เต็มวัน)";
+    }
+
+    // Prepare message
+    const message = `สวัสดีครับ สนใจจองทริปล่องเรือไหว้พระคลองอ้อมนนท์\n` +
+                    `📌 แพ็กเกจ: ${packageStr}\n` +
+                    `📅 วันที่: ${formattedDate}\n` +
+                    `⏰ เวลา: ${timeInput} น.\n` +
+                    `ขอสอบถามรายละเอียดเพิ่มเติมและวิธีการชำระเงินครับ`;
+
+    // Copy to clipboard
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(message).then(() => {
+            alert("✅ คัดลอกรายละเอียดการจองแล้ว!\n\nระบบกำลังเปิดแอป LINE ของคุณ\nกรุณากด 'วาง (Paste)' ในช่องแชทเพื่อส่งข้อความถึงแอดมิน (markzer)");
+            window.location.href = "https://line.me/ti/p/~markzer";
+        }).catch(err => {
+            console.error("Could not copy text: ", err);
+            window.location.href = "https://line.me/ti/p/~markzer";
+        });
+    } else {
+        alert("✅ รายละเอียดการจองเตรียมพร้อมแล้ว!\nระบบกำลังเปิดแอป LINE ของคุณ (markzer)");
+        window.location.href = "https://line.me/ti/p/~markzer";
+    }
+};
