@@ -1111,3 +1111,70 @@ body {
     margin-top: 14px;
     margin-bottom: 0 !important;
 }
+
+/* Worship Modal Specific Styles */
+.worship-category-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: var(--gold-gradient);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+}
+.worship-detail-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px dashed rgba(196, 156, 94, 0.4);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+}
+.worship-detail-box h3 {
+    font-size: 14px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+.worship-detail-box p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.worship-video-container {
+    margin-bottom: 16px;
+}
+.worship-video-container h3 {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+.worship-links-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.references-list h4 {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+.references-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+.references-list li {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.references-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.references-list a::before {
+    content: "??";
+}
+

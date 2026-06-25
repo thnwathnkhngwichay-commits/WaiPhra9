@@ -334,6 +334,37 @@
         </nav>
     </div>
 
+    <!-- Worship Guide Modal -->
+    <div id="worship-modal" class="modal">
+        <div class="modal-content card">
+            <span class="close-btn worship-close-btn">&times;</span>
+            <div class="modal-header">
+                <h2 id="worship-title">🪷 เคล็ดลับขอพร</h2>
+                <p id="worship-highlight" style="color: var(--primary-light);">จุดเด่น</p>
+            </div>
+            <div class="modal-body">
+                <div class="worship-category-badge" id="worship-category">
+                    หมวดหมู่
+                </div>
+                <div class="worship-detail-box">
+                    <h3>คำแนะนำการขอพร</h3>
+                    <p id="worship-detail">รายละเอียด...</p>
+                </div>
+                <div class="worship-video-container" id="worship-video-container" style="display: none;">
+                    <h3>วิดีโอแนะนำ</h3>
+                    <iframe id="worship-video" width="100%" height="250" src="" frameborder="0" allowfullscreen style="border-radius: var(--radius-md);"></iframe>
+                </div>
+                <div class="worship-links-box">
+                    <a href="#" id="worship-website" class="btn btn-secondary" target="_blank" style="display: none;">🌐 เว็บไซต์ / Facebook ของวัด</a>
+                    <div id="worship-references" class="references-list">
+                        <h4>อ้างอิง:</h4>
+                        <ul id="worship-ref-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Eco-friendly Fish Release Modal -->
     <div id="fish-modal" class="modal">
         <div class="modal-content card">
