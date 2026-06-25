@@ -810,3 +810,63 @@ originalNavClick.forEach(item => {
         }
     });
 });
+
+// --- Dark Mode Logic ---
+const darkModeBtn = document.getElementById('dark-mode-toggle');
+if (darkModeBtn) {
+    // Check saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        darkModeBtn.textContent = '☀️';
+    }
+    
+    darkModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            darkModeBtn.textContent = '☀️';
+        } else {
+            localStorage.setItem('theme', 'light');
+            darkModeBtn.textContent = '🌙';
+        }
+    });
+}
+
+// --- Live Weather Fetch ---
+async function fetchWeather() {
+    const weatherWidget = document.getElementById('weather-widget');
+    const weatherTemp = document.getElementById('weather-temp');
+    const weatherDesc = document.getElementById('weather-desc');
+    const weatherIcon = document.getElementById('weather-icon');
+    
+    if (!weatherWidget) return;
+    weatherWidget.style.display = 'inline-flex';
+    
+    try {
+        // Free Open-Meteo API for Nonthaburi
+        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=13.862&longitude=100.514&current_weather=true');
+        const data = await res.json();
+        const temp = data.current_weather.temperature;
+        const code = data.current_weather.weathercode;
+        
+        weatherTemp.textContent = temp + '°C';
+        
+        if (code === 0) { weatherIcon.textContent = '☀️'; weatherDesc.textContent = 'อากาศแจ่มใส'; }
+        else if (code >= 1 && code <= 3) { weatherIcon.textContent = '⛅'; weatherDesc.textContent = 'มีเมฆบางส่วน'; }
+        else if (code >= 51 && code <= 67) { weatherIcon.textContent = '🌧️'; weatherDesc.textContent = 'มีฝนตก'; }
+        else { weatherIcon.textContent = '🌥️'; weatherDesc.textContent = 'อากาศปกคลุม'; }
+        
+    } catch (err) {
+        weatherDesc.textContent = 'ไม่สามารถดึงข้อมูลอากาศได้';
+    }
+}
+fetchWeather();
+
+// --- PWA Service Worker Registration ---
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/WaiPhra9/sw.js')
+            .then(reg => console.log('ServiceWorker registered'))
+            .catch(err => console.log('ServiceWorker registration failed: ', err));
+    });
+}

@@ -1,0 +1,21 @@
+{
+  "name": "WaiPhra9",
+  "short_name": "WaiPhra9",
+  "description": "แผนที่เส้นทางเรือคลองอ้อมนนท์-บางใหญ่ ไหว้พระ 9 วัด",
+  "start_url": "/WaiPhra9/",
+  "display": "standalone",
+  "background_color": "#F6F3EC",
+  "theme_color": "#C49C5E",
+  "icons": [
+    {
+      "src": "images/canal_map_ui.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/canal_map_ui.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

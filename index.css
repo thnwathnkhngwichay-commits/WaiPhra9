@@ -1403,3 +1403,74 @@ body {
     100% { box-shadow: 0 0 0 0 rgba(196, 156, 94, 0); }
 }
 
+
+/* --- Dark Mode Variables & Styles --- */
+body.dark-mode {
+    --bg-color: #1a1c1a;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --card-bg: rgba(30, 35, 30, 0.85);
+    --card-border: 1px solid rgba(196, 156, 94, 0.4);
+    background-color: var(--bg-color);
+}
+body.dark-mode .app-container {
+    background: var(--bg-color);
+}
+body.dark-mode .section.card {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+body.dark-mode .app-bottom-nav {
+    background: rgba(20, 20, 20, 0.95);
+    border-top: 1px solid rgba(196, 156, 94, 0.2);
+}
+body.dark-mode .nav-item {
+    color: var(--text-secondary);
+}
+body.dark-mode .nav-item.active {
+    color: var(--accent-gold);
+}
+body.dark-mode .temple-card {
+    background: rgba(40, 45, 40, 0.9);
+    border-color: rgba(196, 156, 94, 0.3);
+}
+body.dark-mode .temple-name {
+    color: #FFF0D4;
+}
+body.dark-mode .custom-app-header {
+    background: linear-gradient(135deg, #111 0%, #222 100%);
+    border-bottom: 1px solid rgba(196, 156, 94, 0.3);
+}
+body.dark-mode .animated-route-box {
+    background-color: #222;
+}
+body.dark-mode .stat-card {
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* --- Weather Widget --- */
+.weather-widget {
+    background: rgba(0,0,0,0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- Calendar Form --- */
+.form-input {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+body.dark-mode .form-input {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+}
+

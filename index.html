@@ -15,6 +15,26 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/thnwathnkhngwichay-commits/WaiPhra9/main/images/canal_map_ui.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="th_TH">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#C49C5E">
+    <link rel="apple-touch-icon" href="images/canal_map_ui.png">
+
+    <!-- SEO JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TouristAttraction",
+      "name": "ล่องเรือไหว้พระคลองอ้อมนนท์-บางใหญ่",
+      "description": "ท่องเที่ยววิถีชุมชนริมน้ำอ้อมนนท์ ล่องเรือชมธรรมชาติ และบ้านไม้เรือนไทยโบราณ ปลอดภัยและสงบสุข",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nonthaburi",
+        "addressRegion": "TH"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- App Container -->
@@ -28,6 +48,10 @@
                 <button onclick="changeLanguage('th')" class="lang-btn active" id="lang-th">🇹🇭 TH</button>
                 <button onclick="changeLanguage('en')" class="lang-btn" id="lang-en">🇬🇧 EN</button>
                 <button onclick="changeLanguage('zh')" class="lang-btn" id="lang-zh">🇨🇳 ZH</button>
+            </div>
+            
+            <div class="header-actions" style="position: absolute; right: 20px; top: 20px;">
+                <button id="dark-mode-toggle" class="btn-icon" title="Toggle Dark Mode">🌙</button>
             </div>
             <div class="header-main-title">
                 <h2 data-i18n="app_title">แผนที่เส้นทางเรือคลองอ้อมนนท์ 🛶 ───> บางใหญ่</h2>
@@ -44,6 +68,12 @@
             <div class="promo-hero-overlay">
                 <h1 class="promo-title" data-i18n="promo_title">สัมผัสเสน่ห์สายน้ำแห่งศรัทธา</h1>
                 <p class="promo-subtitle" data-i18n="promo_subtitle">เปิดประสบการณ์ล่องเรือไหว้พระคลองอ้อมนนท์-บางใหญ่ ในมุมที่คุณไม่เคยเห็น</p>
+                
+                <div id="weather-widget" class="weather-widget" style="margin-top: 10px; display: none;">
+                    <span id="weather-icon">🌤️</span>
+                    <span id="weather-temp">--°C</span>
+                    <span id="weather-desc">กำลังโหลดสภาพอากาศ...</span>
+                </div>
                 <button class="btn btn-primary promo-btn" onclick="document.querySelector('.nav-item[data-view=\'booking\']').click()" data-i18n="promo_btn">เริ่มจองทริปเลย!</button>
             </div>
         </div>
@@ -159,6 +189,19 @@
                         <button onclick="shareTrip()" class="btn btn-primary share-btn mt-2" style="width: 100%; margin-top: 12px;" data-i18n="btn_share_trip">📤 แชร์ทริปนี้ให้เพื่อน</button>
                     </div>
 
+                    
+                    <!-- Calendar UI -->
+                    <div class="calendar-group" style="margin-top: 20px; text-align: left;">
+                        <label>เลือกวันที่เดินทาง:</label>
+                        <input type="date" id="booking-date" class="form-input" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 8px;">
+                        <label style="margin-top: 10px; display: block;">เลือกเวลา:</label>
+                        <select id="booking-time" class="form-input" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-top: 8px;">
+                            <option value="09:00">09:00 น. (ช่วงเช้า)</option>
+                            <option value="13:00">13:00 น. (ช่วงบ่าย)</option>
+                            <option value="16:00">16:00 น. (ชมพระอาทิตย์ตก)</option>
+                        </select>
+                    </div>
+
                     <!-- Meeting Point Info -->
                     <div class="meeting-point-box">
                         <div class="meeting-badge">จุดรวมพลและท่าเรือหลัก</div>
@@ -238,6 +281,44 @@
                     </div>
                     <div class="pricing-note">
                         <p>💡 <strong>หมายเหตุ:</strong> สนับสนุนเงินสู่ชาวบ้านขับเรือ 100% (มีชูชีพและประกันอุบัติเหตุทางน้ำรวมแล้ว)</p>
+                    </div>
+                </section>
+
+                <!-- Testimonials Section -->
+                <section class="section card testimonials-section">
+                    <h2 class="section-title"><span class="icon">⭐</span> ความประทับใจจากนักท่องเที่ยว</h2>
+                    <div class="testimonial-grid" style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
+                        <div class="testimonial-card" style="min-width: 200px; padding: 15px; border-radius: 8px; background: rgba(255,255,255,0.8); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div class="stars" style="color: gold;">★★★★★</div>
+                            <p style="font-size: 13px; font-style: italic;">"ทริป 9 วัดดีมากค่ะ คุณลุงคนขับเรือใจดี แนะนำจุดถ่ายรูปสวยๆ ตลอดทาง"</p>
+                            <span style="font-size: 11px; color: #666;">- คุณแพรวา</span>
+                        </div>
+                        <div class="testimonial-card" style="min-width: 200px; padding: 15px; border-radius: 8px; background: rgba(255,255,255,0.8); box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                            <div class="stars" style="color: gold;">★★★★★</div>
+                            <p style="font-size: 13px; font-style: italic;">"คุ้มค่ามาก ได้ไหว้พระ ปล่อยปลา พาพ่อแม่มาเที่ยว ท่านชอบมากๆ ครับ"</p>
+                            <span style="font-size: 11px; color: #666;">- คุณวิศรุต</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interactive FAQ -->
+                <section class="section card faq-section">
+                    <h2 class="section-title"><span class="icon">❓</span> คำถามที่พบบ่อย (FAQ)</h2>
+                    <div class="faq-item" style="border-bottom: 1px solid #eee; padding: 10px 0;">
+                        <div class="faq-question" style="font-weight: bold; cursor: pointer; display: flex; justify-content: space-between;" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            1. มีที่จอดรถไหม? <span>+</span>
+                        </div>
+                        <div class="faq-answer hidden" style="font-size: 13px; color: #555; margin-top: 5px; padding-left: 10px;">
+                            มีที่จอดรถฟรีบริเวณวัดชลอ (จุดขึ้นเรือ) ครับ กว้างขวางและปลอดภัย
+                        </div>
+                    </div>
+                    <div class="faq-item" style="border-bottom: 1px solid #eee; padding: 10px 0;">
+                        <div class="faq-question" style="font-weight: bold; cursor: pointer; display: flex; justify-content: space-between;" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                            2. ผู้สูงอายุหรือเด็กนั่งได้ไหม? <span>+</span>
+                        </div>
+                        <div class="faq-answer hidden" style="font-size: 13px; color: #555; margin-top: 5px; padding-left: 10px;">
+                            นั่งได้ครับ เรือของเรามีหลังคากันแดด มีเสื้อชูชีพทุกที่นั่ง และขับด้วยความเร็วที่ปลอดภัย
+                        </div>
                     </div>
                 </section>
             </div>
