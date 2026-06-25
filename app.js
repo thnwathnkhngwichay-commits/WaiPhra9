@@ -735,3 +735,68 @@ window.shareTrip = function() {
         alert('Sharing is not supported on this browser. Here is the text:\n\n' + text);
     }
 };
+
+// --- Lightbox Logic ---
+const lightboxModal = document.getElementById("lightbox-modal");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxCloseBtn = document.querySelector(".lightbox-close");
+
+window.openLightbox = function(src) {
+    lightboxImg.src = src;
+    lightboxModal.style.display = "flex";
+};
+
+if (lightboxCloseBtn) {
+    lightboxCloseBtn.onclick = function() {
+        lightboxModal.style.display = "none";
+    };
+}
+
+// Add lightbox click-to-close on background
+window.addEventListener('click', function(event) {
+    if (event.target === lightboxModal) {
+        lightboxModal.style.display = "none";
+    }
+});
+
+// --- Number Counter Animation for Stats ---
+function animateNumbers() {
+    const statNums = document.querySelectorAll('.stat-num');
+    statNums.forEach(stat => {
+        const text = stat.innerText;
+        // Extract numbers and non-numbers
+        const match = text.match(/([\d.]+)(.*)/);
+        if (match) {
+            const target = parseFloat(match[1]);
+            const suffix = match[2];
+            let current = 0;
+            const increment = target / 30; // 30 frames
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    // check if float
+                    if (target % 1 !== 0) {
+                        stat.innerText = current.toFixed(1) + suffix;
+                    } else {
+                        stat.innerText = Math.ceil(current) + suffix;
+                    }
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    stat.innerText = target + suffix;
+                }
+            };
+            updateCounter();
+        }
+    });
+}
+
+// Hook animateNumbers into tab switching
+const originalNavClick = document.querySelectorAll(".nav-item");
+originalNavClick.forEach(item => {
+    item.addEventListener("click", () => {
+        if (item.getAttribute("data-view") === "route-info") {
+            // Trigger animation slightly after tab switches
+            setTimeout(animateNumbers, 100);
+        }
+    });
+});

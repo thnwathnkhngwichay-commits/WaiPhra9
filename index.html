@@ -74,16 +74,31 @@
                         <p>ท่องเที่ยววิถีชุมชนริมน้ำอ้อมนนท์-บางใหญ่ ล่องเรือชมธรรมชาติ สวนส้มโอเมืองนนท์ ทุเรียนนนท์ และบ้านไม้เรือนไทยโบราณที่หาชมได้ยาก โดยการเดินทางด้วยเรือท้องถิ่นที่ปลอดภัยและสงบสุข</p>
                     </div>
 
-                    <!-- Route Map Image from mockup -->
-                    <div class="mockup-view">
-                        <p class="mockup-label">🗺️ แผนที่เส้นทางเรือคลองอ้อมนนท์ (จากต้นแบบ):</p>
-                        <img src="images/canal_map_ui.png" alt="แผนที่ล่องเรือนำทางบางใหญ่" class="mockup-image">
+                    <!-- Animated Route Map -->
+                    <div class="animated-route-box">
+                        <svg viewBox="0 0 450 120" class="svg-route-animation">
+                            <!-- Simple curvy river path -->
+                            <path d="M -10,60 Q 100,10 225,60 T 460,60" fill="none" stroke="#54946F" stroke-width="20" stroke-linecap="round" />
+                            <path d="M -10,60 Q 100,10 225,60 T 460,60" fill="none" stroke="#68AB85" stroke-width="8" stroke-linecap="round" />
+                            <!-- Dotted line -->
+                            <path d="M -10,60 Q 100,10 225,60 T 460,60" fill="none" stroke="#E5BA73" stroke-width="4" stroke-dasharray="6,6" />
+                            
+                            <!-- Animated Boat -->
+                            <g>
+                                <path d="M-8,-4 L8,-4 L12,0 L8,4 L-8,4 Z" fill="#D85A48" stroke="#FFFFFF" stroke-width="1.5" />
+                                <circle cx="2" cy="0" r="1.5" fill="#fff" />
+                                <animateMotion dur="6s" repeatCount="indefinite" rotate="auto" path="M -10,60 Q 100,10 225,60 T 460,60" />
+                            </g>
+                        </svg>
                     </div>
 
                     <!-- Custom Route Info UI Mockup from image folder -->
                     <div class="mockup-view">
-                        <p class="mockup-label">🖼️ ภาพจำลองหน้าข้อมูลเส้นทางท่องเที่ยว:</p>
-                        <img src="images/route_info_ui.png" alt="ข้อมูลเส้นทางล่องเรือ" class="mockup-image">
+                        <p class="mockup-label">🖼️ ภาพตัวอย่างทริป (กดเพื่อขยาย):</p>
+                        <div class="image-gallery">
+                            <img src="images/route_info_ui.png" alt="ข้อมูลเส้นทางล่องเรือ" class="mockup-image clickable-image" onclick="openLightbox(this.src)">
+                            <img src="images/canal_map_ui.png" alt="แผนที่ล่องเรือนำทางบางใหญ่" class="mockup-image clickable-image" onclick="openLightbox(this.src)">
+                        </div>
                     </div>
                 </section>
             </div>
@@ -446,6 +461,12 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
     </div>
 
     <script src="app.js"></script>
