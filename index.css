@@ -1306,3 +1306,29 @@ body {
     to {transform: scale(1); opacity: 1;}
 }
 
+
+/* Sequence Markers in Animated Route Info */
+.seq-marker {
+    animation: popUpMarker 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+}
+.seq-marker:nth-child(2) { animation-delay: 0.2s; }
+.seq-marker:nth-child(3) { animation-delay: 0.6s; }
+.seq-marker:nth-child(4) { animation-delay: 1.0s; }
+.seq-marker:nth-child(5) { animation-delay: 1.4s; }
+.seq-marker:nth-child(6) { animation-delay: 1.8s; }
+.seq-marker:nth-child(7) { animation-delay: 2.2s; }
+.seq-marker:nth-child(8) { animation-delay: 2.6s; }
+
+.seq-text {
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--text-primary);
+    stroke: #FFFFFF;
+    stroke-width: 3.5px;
+    paint-order: stroke fill;
+}
+@keyframes popUpMarker {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
