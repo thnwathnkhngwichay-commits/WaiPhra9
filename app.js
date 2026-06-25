@@ -191,6 +191,7 @@ const templesData = [
         worshipCategory: "💰 ด้านการเงินและธุรกิจ",
         worshipCategory_en: "Blessings",
         worshipCategory_zh: "祈福",
+        worshipCategory_zh: "祈福",
         worshipGuideDetail: "กราบขอพรหลวงพ่อขาว พระพุทธรูปเก่าแก่สมัยอู่ทอง เชื่อกันว่าหากขอพรเรื่องการค้าขาย ธุรกิจจะเจริญรุ่งเรือง (เมื่อสำเร็จมักถวายน้ำตาลทรายขาว)",
         worshipGuideDetail_en: "Pray for good fortune and health.",
         worshipGuideDetail_zh: "祈求好运和健康。",
@@ -198,7 +199,7 @@ const templesData = [
         references: ["https://th.wikipedia.org/wiki/วัดอุทยาน_(จังหวัดนนทบุรี)"],
         fishRelease: true,
         coords: { x: 180, y: 130 },
-        image: "https://images.unsplash.com/photo-1549487222-137ff7bc5ee5?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1588665046200-a4d1d64c11e6?auto=format&fit=crop&w=800"
     },
     {
         id: 9,
@@ -248,7 +249,7 @@ const templesData = [
         references: ["https://th.wikipedia.org/wiki/วัดตะเคียน_(จังหวัดนนทบุรี)"],
         fishRelease: true,
         coords: { x: 260, y: 55 },
-        image: "https://images.unsplash.com/photo-1582200588691-1cb118a16db4?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1542640244-7e672d6cb466?auto=format&fit=crop&w=800"
     },
     {
         id: 11,
@@ -298,7 +299,7 @@ const templesData = [
         references: ["https://th.wikipedia.org/wiki/วัดอัมพวัน_(จังหวัดนนทบุรี)"],
         fishRelease: false,
         coords: { x: 320, y: 40 },
-        image: "https://images.unsplash.com/photo-1560384469-8db2bfd3df49?auto=format&fit=crop&q=80&w=800"
+        image: "https://images.unsplash.com/photo-1616422285623-149f16e4db47?auto=format&fit=crop&w=800"
     },
     {
         id: 13,
@@ -343,17 +344,6 @@ const templesData = [
         worshipCategory_zh: "祈福",
         worshipGuideDetail: "กราบพระพุทธไสยาสน์ (พระนอน) องค์ใหญ่ที่สุดในนนทบุรี เพื่อขอพรให้สุขภาพแข็งแรง อายุยืนยาว และไร้โรคภัยเบียดเบียน",
         worshipGuideDetail_en: "Pray for good fortune and health.",
-        worshipGuideDetail_zh: "祈求好运和健康。",
-        website: "https://www.facebook.com/watradprakongtham",
-        references: ["https://th.wikipedia.org/wiki/วัดราษฎร์ประคองธรรม"],
-        fishRelease: true,
-        coords: { x: 370, y: 30 },
-        image: "https://images.unsplash.com/photo-1602693630630-f2030ce1dc89?auto=format&fit=crop&q=80&w=800"
-    }
-];
-
-// App State
-let currentCount = 3;
 const isWeekend = new Date().getDay() === 0 || new Date().getDay() === 6; // Check if Saturday or Sunday
 
 // Elements
