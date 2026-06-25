@@ -1178,3 +1178,43 @@ body {
     content: "??";
 }
 
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.lang-btn {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(196, 156, 94, 0.3);
+    padding: 6px 12px;
+    border-radius: var(--radius-lg);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+.lang-btn.active {
+    background: var(--gold-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(196, 156, 94, 0.3);
+}
+
+/* Primary Button (for Share) */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(56, 132, 90, 0.2);
+}
+.btn-primary:hover {
+    background: #2c6e4a;
+    transform: translateY(-2px);
+}
+

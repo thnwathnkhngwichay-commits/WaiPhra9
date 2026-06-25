@@ -8,6 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="WaiPhra9 - ล่องเรือเที่ยวคลองอ้อมนนท์-บางใหญ่">
+    <meta property="og:description" content="จองเรือชาวบ้านราคามาตรฐาน เที่ยววัดริมน้ำ สัมผัสวิถีชีวิตดั้งเดิมนนทบุรี ไหว้พระขอพร 9 วัด">
+    <meta property="og:image" content="https://raw.githubusercontent.com/thnwathnkhngwichay-commits/WaiPhra9/main/images/canal_map_ui.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
 </head>
 <body>
     <!-- App Container -->
@@ -17,12 +24,17 @@
         <div class="decor-glow bg-glow-2"></div>
         <!-- 1. Header (Premium style from image mockup) -->
         <header class="custom-app-header">
+            <div class="lang-switcher">
+                <button onclick="changeLanguage('th')" class="lang-btn active" id="lang-th">🇹🇭 TH</button>
+                <button onclick="changeLanguage('en')" class="lang-btn" id="lang-en">🇬🇧 EN</button>
+                <button onclick="changeLanguage('zh')" class="lang-btn" id="lang-zh">🇨🇳 ZH</button>
+            </div>
             <div class="header-main-title">
-                <h2>แผนที่เส้นทางเรือคลองอ้อมนนท์ 🛶 ───> บางใหญ่</h2>
+                <h2 data-i18n="app_title">แผนที่เส้นทางเรือคลองอ้อมนนท์ 🛶 ───> บางใหญ่</h2>
             </div>
             <div class="header-meta-info">
-                <span class="meta-start">เริ่ม: บางใหญ่</span>
-                <span class="meta-end">ปลายทาง: วัดราษฎร์ประคองธรรม</span>
+                <span class="meta-start" data-i18n="start_point">เริ่ม: บางใหญ่</span>
+                <span class="meta-end" data-i18n="end_point">ปลายทาง: วัดราษฎร์ประคองธรรม</span>
             </div>
         </header>
 
@@ -83,12 +95,13 @@
                     <h2 class="section-title"><span class="icon">🧭</span> จองทริปเรือตามใจชอบ</h2>
                     
                     <div class="selector-group">
-                        <label>ปรับแต่งจำนวนวัดท่องเที่ยว:</label>
+                        <label data-i18n="trip_customize">ปรับแต่งจำนวนวัดท่องเที่ยว:</label>
                         <div class="temple-buttons">
-                            <button class="btn-toggle active" data-count="3">3 วัด (ทริปสั้น)</button>
-                            <button class="btn-toggle" data-count="5">5 วัด (ครึ่งวัน)</button>
-                            <button class="btn-toggle" data-count="9">9 วัด (เต็มวัน)</button>
+                            <button class="btn-toggle active" data-count="3"><span data-i18n="trip_3">3 วัด (ทริปสั้น)</span></button>
+                            <button class="btn-toggle" data-count="5"><span data-i18n="trip_5">5 วัด (ครึ่งวัน)</span></button>
+                            <button class="btn-toggle" data-count="9"><span data-i18n="trip_9">9 วัด (เต็มวัน)</span></button>
                         </div>
+                        <button onclick="shareTrip()" class="btn btn-primary share-btn mt-2" style="width: 100%; margin-top: 12px;" data-i18n="btn_share_trip">📤 แชร์ทริปนี้ให้เพื่อน</button>
                     </div>
 
                     <!-- Meeting Point Info -->
