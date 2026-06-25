@@ -344,6 +344,17 @@ const templesData = [
         worshipCategory_zh: "祈福",
         worshipGuideDetail: "กราบพระพุทธไสยาสน์ (พระนอน) องค์ใหญ่ที่สุดในนนทบุรี เพื่อขอพรให้สุขภาพแข็งแรง อายุยืนยาว และไร้โรคภัยเบียดเบียน",
         worshipGuideDetail_en: "Pray for good fortune and health.",
+        worshipGuideDetail_zh: "祈求好运和健康。",
+        website: "https://www.facebook.com/watradprakongtham",
+        references: ["https://th.wikipedia.org/wiki/วัดราษฎร์ประคองธรรม"],
+        fishRelease: true,
+        coords: { x: 370, y: 30 },
+        image: "https://images.unsplash.com/photo-1528616196238-d6219b1db1eb?auto=format&fit=crop&w=800"
+    }
+];
+
+// App State
+let currentCount = 3;
 const isWeekend = new Date().getDay() === 0 || new Date().getDay() === 6; // Check if Saturday or Sunday
 
 // Elements
