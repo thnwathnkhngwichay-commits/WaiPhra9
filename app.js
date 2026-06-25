@@ -11,7 +11,6 @@ const templesData = [
         worshipGuideDetail: "กราบไหว้พระประธานในอุโบสถเรือสุพรรณหงส์ เสริมสิริมงคลให้ชีวิตและการงานราบรื่น นำพาชีวิตให้ก้าวหน้าเหมือนเรือที่ล่องไปข้างหน้า",
         website: "https://www.facebook.com/watchalo",
         references: ["https://th.wikipedia.org/wiki/วัดชลอ"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: true,
         coords: { x: 30, y: 170 },
         image: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Cha-lor.jpg"
@@ -27,7 +26,6 @@ const templesData = [
         worshipGuideDetail: "กราบไหว้พระประธานและสัมผัสความสงบร่มรื่นภายในวัด ช่วยผ่อนคลายจิตใจและขอพรให้สุขภาพร่างกายแข็งแรง ปราศจากโรคภัยไข้เจ็บ",
         website: "https://www.facebook.com/pages/วัดเกดประยงค์เล็กตั้งตรงจิตร",
         references: ["https://www.youtube.com/watch?v=kYx8kR5_3m8"],
-        video: "",
         fishRelease: false,
         coords: { x: 80, y: 155 },
         image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=800"
@@ -43,7 +41,6 @@ const templesData = [
         worshipGuideDetail: "ขอพรหลวงพ่อศิลา พระพุทธรูปศักดิ์สิทธิ์ประจำวัด เพื่อความสว่างไสวทางสติปัญญา การเรียนการศึกษา และความก้าวหน้าทางวิชาการ",
         website: "https://www.facebook.com/watphobangoo",
         references: ["https://th.wikipedia.org/wiki/วัดโพธิ์บางโอ"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: false,
         coords: { x: 130, y: 140 },
         image: "https://upload.wikimedia.org/wikipedia/commons/9/9f/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AD%E0%B8%B8%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%E0%B9%8C%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%82%E0%B8%AD.jpg"
@@ -59,7 +56,6 @@ const templesData = [
         worshipGuideDetail: "สักการะรอยพระพุทธบาทจำลอง ขออำนาจบารมีคุ้มครองให้เดินทางแคล้วคลาด ปลอดภัยจากภยันตรายทั้งปวง",
         website: "https://www.facebook.com/watbangoichang",
         references: ["https://th.wikipedia.org/wiki/วัดบางอ้อยช้าง"],
-        video: "",
         fishRelease: false,
         coords: { x: 150, y: 145 },
         image: "https://upload.wikimedia.org/wikipedia/commons/4/4e/%E0%B8%8B%E0%B8%B8%E0%B9%89%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%AD%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%8A%E0%B9%89%E0%B8%B2%E0%B8%87.jpg"
@@ -75,7 +71,6 @@ const templesData = [
         worshipGuideDetail: "ตามชื่อวัด 'ไทยเจริญ' นิยมมาขอพรให้ชีวิตและหน้าที่การงานเจริญรุ่งเรือง ก้าวหน้า ไม่มีอุปสรรคขัดขวาง",
         website: "",
         references: ["https://th.wikipedia.org/wiki/วัดไทยเจริญ_(จังหวัดนนทบุรี)"],
-        video: "",
         fishRelease: false,
         coords: { x: 165, y: 138 },
         image: "https://images.unsplash.com/photo-1590494446549-b6cb8b30f808?auto=format&fit=crop&q=80&w=800"
@@ -91,7 +86,6 @@ const templesData = [
         worshipGuideDetail: "สัมผัสความขลังของอุโบสถโบราณ 400 ปี ขอพรด้านความมั่นคงในชีวิต การงาน และขอเสริมสร้างบารมีให้เป็นที่น่าเกรงขาม",
         website: "https://www.facebook.com/watkaewfa",
         references: ["https://th.wikipedia.org/wiki/วัดแก้วฟ้า_(จังหวัดนนทบุรี)"],
-        video: "",
         fishRelease: false,
         coords: { x: 172, y: 132 },
         image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Kaew-Fa-%281%29.jpg"
@@ -107,7 +101,6 @@ const templesData = [
         worshipGuideDetail: "ขอพรหลวงพ่อโสธรจำลอง ซึ่งขึ้นชื่อเรื่องความศักดิ์สิทธิ์ในการดลบันดาลโชคลาภและความสำเร็จในสิ่งที่มุ่งหวัง",
         website: "",
         references: ["https://th.wikipedia.org/wiki/วัดพิกุลทอง_(จังหวัดนนทบุรี)"],
-        video: "",
         fishRelease: false,
         coords: { x: 175, y: 120 },
         image: "https://upload.wikimedia.org/wikipedia/commons/2/23/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%B4%E0%B8%81%E0%B8%B8%E0%B8%A5%E0%B8%97%E0%B8%AD%E0%B8%87_%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5.jpg"
@@ -123,7 +116,6 @@ const templesData = [
         worshipGuideDetail: "กราบขอพรหลวงพ่อขาว พระพุทธรูปเก่าแก่สมัยอู่ทอง เชื่อกันว่าหากขอพรเรื่องการค้าขาย ธุรกิจจะเจริญรุ่งเรือง (เมื่อสำเร็จมักถวายน้ำตาลทรายขาว)",
         website: "https://www.facebook.com/watuthayan",
         references: ["https://th.wikipedia.org/wiki/วัดอุทยาน_(จังหวัดนนทบุรี)"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: true,
         coords: { x: 180, y: 130 },
         image: "https://images.unsplash.com/photo-1549487222-137ff7bc5ee5?auto=format&fit=crop&q=80&w=800"
@@ -139,7 +131,6 @@ const templesData = [
         worshipGuideDetail: "สักการะสถานที่ประวัติศาสตร์ที่หลวงปู่สดบรรลุธรรม ขอพรให้จิตใจสงบ เกิดสติปัญญา สมาธิตั้งมั่นในการแก้ปัญหาชีวิต",
         website: "https://www.facebook.com/watbotbon",
         references: ["https://th.wikipedia.org/wiki/วัดโบสถ์บน"],
-        video: "",
         fishRelease: false,
         coords: { x: 230, y: 60 },
         image: "https://upload.wikimedia.org/wikipedia/commons/6/69/%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B9%82%E0%B8%9A%E0%B8%AA%E0%B8%96%E0%B9%8C%E0%B8%9A%E0%B8%99.jpg"
@@ -155,7 +146,6 @@ const templesData = [
         worshipGuideDetail: "ไฮไลท์คือการเดินลอดใต้พระอุโบสถ เพื่อปัดเป่าสิ่งชั่วร้าย ล้างอาถรรพ์ และเสริมดวงชะตาให้ชีวิตดีขึ้น พร้อมกราบขอพรหลวงปู่แย้ม",
         website: "https://www.facebook.com/wattakien",
         references: ["https://th.wikipedia.org/wiki/วัดตะเคียน_(จังหวัดนนทบุรี)"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: true,
         coords: { x: 260, y: 55 },
         image: "https://images.unsplash.com/photo-1582200588691-1cb118a16db4?auto=format&fit=crop&q=80&w=800"
@@ -171,7 +161,6 @@ const templesData = [
         worshipGuideDetail: "ขอพรหลวงพ่อพุทธโสธรองค์ใหญ่ เพื่อความเป็นสิริมงคล เสริมความรักความอบอุ่นในครอบครัวให้รักใคร่กลมเกลียวกัน",
         website: "",
         references: ["https://th.wikipedia.org/wiki/วัดพิกุลเงิน"],
-        video: "",
         fishRelease: false,
         coords: { x: 290, y: 48 },
         image: "https://images.unsplash.com/photo-1603517117182-3e2842e12e10?auto=format&fit=crop&q=80&w=800"
@@ -187,7 +176,6 @@ const templesData = [
         worshipGuideDetail: "ด้วยสัญลักษณ์ของหอไตรกลางน้ำซึ่งเป็นที่เก็บพระไตรปิฎก จึงนิยมขอพรด้านการศึกษา การเรียน และการสอบแข่งขันให้ประสบความสำเร็จ",
         website: "https://www.facebook.com/watumphawan.nonthaburi",
         references: ["https://th.wikipedia.org/wiki/วัดอัมพวัน_(จังหวัดนนทบุรี)"],
-        video: "",
         fishRelease: false,
         coords: { x: 320, y: 40 },
         image: "https://images.unsplash.com/photo-1560384469-8db2bfd3df49?auto=format&fit=crop&q=80&w=800"
@@ -203,7 +191,6 @@ const templesData = [
         worshipGuideDetail: "กราบหลวงพ่ออู่ทองในพระอุโบสถเก่า และเวียนเทียนรอบองค์พระปรางค์ศิลาแลง 600 ปี เพื่อขอโชคลาภและให้สิ่งศักดิ์สิทธิ์คุ้มครอง",
         website: "https://www.facebook.com/watprangluang",
         references: ["https://th.wikipedia.org/wiki/วัดปรางค์หลวง"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: false,
         coords: { x: 345, y: 35 },
         image: "https://upload.wikimedia.org/wikipedia/commons/8/80/%282023%29_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B8%84%E0%B9%8C%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87_%E0%B8%AD.%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88_%E0%B8%88.%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5_%288%29.jpg"
@@ -219,7 +206,6 @@ const templesData = [
         worshipGuideDetail: "กราบพระพุทธไสยาสน์ (พระนอน) องค์ใหญ่ที่สุดในนนทบุรี เพื่อขอพรให้สุขภาพแข็งแรง อายุยืนยาว และไร้โรคภัยเบียดเบียน",
         website: "https://www.facebook.com/watradprakongtham",
         references: ["https://th.wikipedia.org/wiki/วัดราษฎร์ประคองธรรม"],
-        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
         fishRelease: true,
         coords: { x: 370, y: 30 },
         image: "https://images.unsplash.com/photo-1602693630630-f2030ce1dc89?auto=format&fit=crop&q=80&w=800"
@@ -370,8 +356,6 @@ const worshipTitle = document.getElementById("worship-title");
 const worshipHighlight = document.getElementById("worship-highlight");
 const worshipCategory = document.getElementById("worship-category");
 const worshipDetail = document.getElementById("worship-detail");
-const worshipVideoContainer = document.getElementById("worship-video-container");
-const worshipVideo = document.getElementById("worship-video");
 const worshipWebsite = document.getElementById("worship-website");
 const worshipRefList = document.getElementById("worship-ref-list");
 
@@ -385,14 +369,7 @@ window.showWorshipGuide = function(id) {
     worshipCategory.textContent = temple.worshipCategory;
     worshipDetail.textContent = temple.worshipGuideDetail;
 
-    // Handle video
-    if (temple.video) {
-        worshipVideo.src = temple.video;
-        worshipVideoContainer.style.display = "block";
-    } else {
-        worshipVideo.src = "";
-        worshipVideoContainer.style.display = "none";
-    }
+
 
     // Handle website
     if (temple.website) {
@@ -420,7 +397,6 @@ window.showWorshipGuide = function(id) {
 
 worshipCloseBtn.onclick = function() {
     worshipModal.style.display = "none";
-    worshipVideo.src = ""; // Stop video playing
 };
 
 // Show PromptPay details
@@ -443,7 +419,6 @@ window.onclick = function(event) {
     }
     if (event.target === worshipModal) {
         worshipModal.style.display = "none";
-        worshipVideo.src = ""; // Stop video playing
     }
 };
 
